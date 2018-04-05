@@ -24,21 +24,21 @@ public class ExamBuilder {
 	private static String myName = "Brian De Villa";
 	private static String myNetID = "bdevil2";
 
-	private static int questionSize = 10; // Change to adjust the amount of questions in the test.
-	private static double examTotal = 0; // Leave Unchanged
+	//private static int questionSize = 10; // Change to adjust the amount of questions in the test.
+	//private static double examTotal = 0; // Leave Unchanged
 
 	private static String directoryM = "/nfsdirs/home4/home4/ugrad4/bvilla/CS342/HW3/examfile.txt"; // CHANGE DIRECTROY
 																									// HERE~!
 	private static String directoryA = "/nfsdirs/home4/home4/ugrad4/bvilla/CS342/HW3/ansFile.txt"; // Change DIRECTORY
 																									// HERE~!
 
-	private volatile static boolean debugMode = true; // Debug Mode
+	private volatile static boolean debugMode = false; // Debug Mode
 
 	private static boolean check;
 
 	private static Exam exam1;
 
-	// Command_Loop (Unused but left for future implement)
+	// Command_Loop 
 	private static void commandLoop() {
 		System.out.print("=>  ");
 		Scanner sc = new Scanner(System.in);
@@ -65,6 +65,8 @@ public class ExamBuilder {
 				System.exit(0);
 			} else if (command.equals("?")) { // Help Command
 				commandHelp();
+			} else if (command.equals("c")) { // Create Exam File
+				createExam();
 			} else if (command.equals("l")) { // Load Exam File
 				loadExam();
 			} else if (command.equals("aq")) { // Add Question
@@ -95,6 +97,7 @@ public class ExamBuilder {
 	// Show Available Commands
 	private static void commandHelp() {
 		System.out.println("Here are the available commands to use: ");
+		System.out.println("   c   - Create an Empty Exam");
 		System.out.println("   l   - Load a Saved Exam from a File");
 		System.out.println("   aq  - Add Questions");
 		System.out.println("   rq  - Remove Questions");
@@ -103,6 +106,23 @@ public class ExamBuilder {
 		System.out.println("   re  - Reorder Exam");
 		System.out.println("   p   - Print the Exam");
 		System.out.println("   s   - Save the Exam");
+	}
+	
+	//Create Exam Method
+	private static void createExam() {
+		System.out.print("    Enter a new Exam Name: ");
+		Scanner df = ScannerFactory.getKeyboardScanner();
+		String userInput = df.nextLine();	
+		
+		check = true;
+		exam1 = new Exam(userInput);
+		System.out.println("    Creating an Exam was Successful");
+		
+		
+		if (debugMode == true) {
+			System.out.println("    UserInput: " + userInput);
+		}
+		
 	}
 
 	// Load Exam Method
@@ -184,7 +204,7 @@ public class ExamBuilder {
 				exam1.addQuestion(q);
 				System.out.println("    Question has been successfully Added.");
 			} else {
-				System.out.println("    Error: User did not enter correct format.");
+				//System.out.println("    Error: User did not enter correct format.");
 			}
 
 			// Notes

@@ -22,7 +22,7 @@ public class Exam {
 
 	public Exam(String msg) {
 		examName = msg;
-		System.out.println("Exam Name: " + examName);
+		//System.out.println("Exam Name: " + examName);
 	}
 
 	// NEW Constructor
@@ -101,7 +101,7 @@ public class Exam {
 	public void addQuestion(Question x) {
 
 		// Error Check (Could also convert to try-catch exception)
-		if (qArray.size() < 10) {
+		if (qArray.size() < 20) {
 			qArray.add(x);
 		} else {
 			System.out.println("Error: Cannot test_user cannot add anymore questions beyond '10'.");
@@ -261,7 +261,11 @@ public class Exam {
 	
 	//Remove Question from Exam
 	public int removeQuest(int pos) {
-		if (pos <= qArray.size()) {
+		
+		System.out.println(" removeQuest Array Size: " + qArray.size());
+		pos -= 1;
+		
+		if (pos > 0 && pos < qArray.size()) {
 			qArray.remove(pos);
 			return 1;
 		}  else {
