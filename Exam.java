@@ -265,7 +265,7 @@ public class Exam {
 		System.out.println(" removeQuest Array Size: " + qArray.size());
 		pos -= 1;
 		
-		if (pos > 0 && pos < qArray.size()) {
+		if (pos >= 0 && pos < qArray.size()) {
 			qArray.remove(pos);
 			return 1;
 		}  else {

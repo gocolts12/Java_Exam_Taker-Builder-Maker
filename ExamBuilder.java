@@ -179,30 +179,38 @@ public class ExamBuilder {
 			String[] userInputRefined = userInput.split("_");
 
 			if (userInputRefined[0] == "MCSAQ") {
+				
 				String qMsgP = userInputRefined[2];
 				Double valP = Double.parseDouble(userInputRefined[1]);
 				MCSAQuestion q = new MCSAQuestion(qMsgP, valP);
 				exam1.addQuestion(q);
 				System.out.println("    Question has been successfully Added.");
+				
 			} else if (userInputRefined[0] == "MCMAQ") {
+				
 				String qMsgP = userInputRefined[3];
 				Double valP = Double.parseDouble(userInputRefined[1]);
 				Double valBC = Double.parseDouble(userInputRefined[2]);
 				MCMAQuestion q = new MCMAQuestion(qMsgP, valP, valBC);
 				exam1.addQuestion(q);
 				System.out.println("    Question has been successfully Added.");
+				
 			} else if (userInputRefined[0] == "SAQ") {
+				
 				String qMsgP = userInputRefined[2];
 				Double valP = Double.parseDouble(userInputRefined[1]);
 				SAQuestion q = new SAQuestion(qMsgP, valP);
 				exam1.addQuestion(q);
 				System.out.println("    Question has been successfully Added.");
+				
 			} else if (userInputRefined[0] == "NumQ") {
+				
 				String qMsgP = userInputRefined[2];
 				Double valP = Double.parseDouble(userInputRefined[1]);
 				NumQuestion q = new NumQuestion(qMsgP, valP);
 				exam1.addQuestion(q);
 				System.out.println("    Question has been successfully Added.");
+				
 			} else {
 				//System.out.println("    Error: User did not enter correct format.");
 			}
