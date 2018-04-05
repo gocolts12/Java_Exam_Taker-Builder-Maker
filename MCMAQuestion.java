@@ -31,6 +31,7 @@ public class MCMAQuestion extends MCQuestion{
 	//New Constructor
 	public MCMAQuestion(Scanner sc) {
 		super(sc);
+		//Add Stuff to the constructor here..
 	}
 	
 	public Answer getNewAnswer() {

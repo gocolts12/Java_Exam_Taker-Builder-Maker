@@ -32,7 +32,7 @@ public class ExamBuilder {
 	private static String directoryA = "/nfsdirs/home4/home4/ugrad4/bvilla/CS342/HW3/ansFile.txt"; // Change DIRECTORY
 																									// HERE~!
 
-	private volatile static boolean debugMode = false; // Debug Mode
+	private volatile static boolean debugMode = true; // Debug Mode
 
 	private static boolean check;
 
@@ -161,6 +161,15 @@ public class ExamBuilder {
 		}
 
 	}
+	
+	//Add Answeres to Question
+	
+	private static void addAnswertoQuest() {
+		
+		
+		
+	}
+	
 
 	// Add Questions Method
 	private static void questionAdd() {
@@ -186,6 +195,8 @@ public class ExamBuilder {
 				exam1.addQuestion(q);
 				System.out.println("    Question has been successfully Added.");
 				
+				//Add Answers here
+				
 			} else if (userInputRefined[0] == "MCMAQ") {
 				
 				String qMsgP = userInputRefined[3];
@@ -195,6 +206,8 @@ public class ExamBuilder {
 				exam1.addQuestion(q);
 				System.out.println("    Question has been successfully Added.");
 				
+				//Add Answers here
+				
 			} else if (userInputRefined[0] == "SAQ") {
 				
 				String qMsgP = userInputRefined[2];
@@ -203,6 +216,8 @@ public class ExamBuilder {
 				exam1.addQuestion(q);
 				System.out.println("    Question has been successfully Added.");
 				
+				//Add Answers here
+				
 			} else if (userInputRefined[0] == "NumQ") {
 				
 				String qMsgP = userInputRefined[2];
@@ -210,6 +225,8 @@ public class ExamBuilder {
 				NumQuestion q = new NumQuestion(qMsgP, valP);
 				exam1.addQuestion(q);
 				System.out.println("    Question has been successfully Added.");
+				
+				//Add Answers here
 				
 			} else {
 				//System.out.println("    Error: User did not enter correct format.");
