@@ -1,4 +1,5 @@
 
+package HW_4_ExamBuilder;
 
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -10,7 +11,7 @@ public abstract class Question {
 	protected Answer studentAnswer;
 	protected double maxValue;
 	
-
+	
 	protected Question(String qMsg, double maxVal) {
 		this.msgPrompt = qMsg;
 		this.maxValue = maxVal;	
@@ -63,7 +64,7 @@ public abstract class Question {
 	public abstract void save(PrintWriter savedWrite);
 	
 	//NEW: Requires PrintWriter
-	public void saveStudentAnswer(PrintWriter savedWrite) {
+	public void saveStudentAnswers(PrintWriter savedWrite) {
 		
 		if (studentAnswer instanceof SAAnswer) {
 			savedWrite.println("\nSAAnswer");

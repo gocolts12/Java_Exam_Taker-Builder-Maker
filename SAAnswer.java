@@ -1,4 +1,5 @@
 
+package HW_4_ExamBuilder;
 
 import java.util.Scanner;
 import java.io.PrintWriter;

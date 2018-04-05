@@ -1,4 +1,6 @@
 
+package HW_4_ExamBuilder;
+
 import java.util.Scanner;
 
 public class ScannerFactory {

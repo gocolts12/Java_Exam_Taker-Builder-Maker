@@ -1,4 +1,5 @@
 
+package HW_4_ExamBuilder;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -130,7 +131,8 @@ public class MCMAQuestion extends MCQuestion{
 
 	
 	//New Method
-	public void saveStudentAnswer(PrintWriter savedWrite) {
+	@Override
+	public void saveStudentAnswers(PrintWriter savedWrite) {
 				
 		savedWrite.println("\n"+ "MCMAAnswer");
 		int countRight = 0;

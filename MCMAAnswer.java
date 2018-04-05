@@ -1,8 +1,10 @@
 
+package HW_4_ExamBuilder;
 
 //Done
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MCMAAnswer extends MCAnswer{
 	
@@ -13,6 +15,10 @@ public class MCMAAnswer extends MCAnswer{
 		super(aMsg, creditifSelected);
 		
 		//ansMsg = aMsg; //Copy the String
+	}
+	
+	public MCMAAnswer(Scanner sc) {
+		super(sc);
 	}
 	
 	/*

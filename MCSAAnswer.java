@@ -1,4 +1,7 @@
 
+package HW_4_ExamBuilder;
+
+import java.util.Scanner;
 
 //Done
 
@@ -11,6 +14,10 @@ public class MCSAAnswer extends MCAnswer {
 	public MCSAAnswer (String aMsg, double creditifSelected) {
 		super(aMsg, creditifSelected);
 		//ansMsg = aMsg;
+	}
+	
+	public MCSAAnswer(Scanner sc) {
+		super(sc);
 	}
 	
 	/*
