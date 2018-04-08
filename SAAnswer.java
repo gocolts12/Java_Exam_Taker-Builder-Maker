@@ -39,6 +39,7 @@ public class SAAnswer extends Answer{
 		
 		savedWrite.println(wordAns);
 		
+		
 
 	}
 	

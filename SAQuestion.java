@@ -80,6 +80,10 @@ public class SAQuestion extends Question {
 		//Prints the Prompt
 		savedWrite.println(qPrompt);
 		
+		SAAnswer ans = (SAAnswer) rightAnswer;
+		
+		savedWrite.println(ans.wordAns);
+		
 		/*
 		if (userMsg != null) {
 			savedWrite.println(userMsg);

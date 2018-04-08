@@ -20,6 +20,7 @@ import java.util.StringTokenizer;
 
 public class ExamBuilder {
 
+	
 	// Name
 	private static String myName = "Brian De Villa";
 	private static String myNetID = "bdevil2";
@@ -38,7 +39,7 @@ public class ExamBuilder {
 	// HERE~!
 	private static String directoryM = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4_ExamBuilder/examfile.txt";
 
-	private volatile static boolean debugMode = true; // Debug Mode
+	private volatile static boolean debugMode = false; // Debug Mode
 
 	private static boolean check;
 	private static int ansLimit = 0;
@@ -155,6 +156,7 @@ public class ExamBuilder {
 				try {
 					Scanner fd = new Scanner(fileNameExam);
 					exam1 = new Exam(fd);
+					
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				}
@@ -455,7 +457,7 @@ public class ExamBuilder {
 
 	}
 
-	// Reorder Questions, and/or Answers Method
+	// Reorder Questions, and/or Answers Method (DONE)
 	private static void reorderExamQuestions() {
 		if (check == true) {
 			exam1.reorderQuestion();
@@ -465,6 +467,7 @@ public class ExamBuilder {
 		}
 	}
 
+	//Reorder Exam Answers	(DONE)
 	private static void reorderExamAnswers() {
 		if (check == true) {
 			exam1.reorderMCAnswer(-1);
@@ -474,6 +477,7 @@ public class ExamBuilder {
 		}
 	}
 
+	//Reorders the Exam		(DONE)
 	private static void reorderExam() {
 		if (check == true) {
 			reorderExamQuestions();
@@ -483,7 +487,7 @@ public class ExamBuilder {
 		}
 	}
 
-	// Print the Exam via Console Method
+	// Print the Exam via Console Method  (DONE)
 	private static void printExam() {
 		if (check == true) {
 			exam1.print();
@@ -492,8 +496,7 @@ public class ExamBuilder {
 		}
 	}
 
-	// Save the Exam, to the file Method
-	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PROBLEMATIC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!
+	// Save the Exam, to the file Method  (DONE)
 	private static void saveExam() {
 		if (check == true) {
 			System.out.println("    Save the Exam's name: ");
@@ -522,4 +525,5 @@ public class ExamBuilder {
 				+ "For more information about the commands type '?'\n");
 		commandLoop();
 	}
+	
 }

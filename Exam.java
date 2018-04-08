@@ -18,6 +18,8 @@ public class Exam {
 	private String examName;
 	private String timeStamp;
 	private double examPoints = 0.0;
+	
+	private boolean debugMode = false;
 
 	private static String studentName;
 
@@ -38,8 +40,10 @@ public class Exam {
 			timeStamp = tiStamp;
 			
 			//Debug Mode
-			//System.out.println("Exam.class TimeStamp: " + timeStamp);
-			//System.out.println("Exam.class ExamName: " + examName);
+			if (debugMode == true) {
+				System.out.println("Exam.class TimeStamp: " + timeStamp);
+				System.out.println("Exam.class ExamName: " + examName);
+			}
 			
 			// This Scans the ExamFile and looks ONLY for Questions and takes in the Prompt
 			// and Values
@@ -68,13 +72,14 @@ public class Exam {
 					try {
 						NumQuestion newQuest = new NumQuestion(sc);
 						qArray.add(newQuest);
+						
 					} catch (Exception e) {
 						System.out.println("Error: Input is not a Number");
 					}
 
 				} else if (v.equals("SAQuestion")) {
 					try {
-						SAQuestion newQuest = new SAQuestion(sc);
+						SAQuestion newQuest = new SAQuestion(sc);						
 						qArray.add(newQuest);
 					} catch (Exception e) {
 						System.out.println("Error: Input is not a Number");
@@ -335,7 +340,10 @@ public class Exam {
 	//Remove Question from Exam
 	public int removeQuest(int pos) {
 		
-		System.out.println(" removeQuest Array Size: " + qArray.size());
+		if (debugMode == true) {
+			System.out.println("    removeQuest Array Size: " + qArray.size());
+		}
+		
 		pos -= 1;
 		
 		if (pos >= 0 && pos < qArray.size()) {
@@ -344,6 +352,7 @@ public class Exam {
 		}  else {
 			return 0;
 		}
+		
 	}
 
 }

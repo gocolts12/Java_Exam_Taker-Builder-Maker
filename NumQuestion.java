@@ -22,7 +22,7 @@ public class NumQuestion extends Question {
 	}
 	
 	public NumQuestion(Scanner sc) {
-		super(sc);
+		super(sc);		
 	}
 	
 	
@@ -81,6 +81,10 @@ public class NumQuestion extends Question {
 	public void save(PrintWriter savedWrite) {
 		savedWrite.println(valu);
 		savedWrite.println(numQ);
+		
+		NumAnswer ans = (NumAnswer) rightAnswer;
+		savedWrite.println(ans.val);
+		
 	}
 	
 	

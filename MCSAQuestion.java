@@ -22,9 +22,33 @@ public class MCSAQuestion extends MCQuestion{
 	//NEW Constructor
 	public MCSAQuestion (Scanner sc) {
 		super(sc);
+		String userInput = sc.toString();
+		
+		System.out.println("USER INPUT IN MCSA: " + userInput);
+		if (isDouble(userInput)) {
+			points = Double.parseDouble(userInput);
+		}
+		userInput = sc.nextLine();
+		System.out.println("New USERINPUT in MCSA: " + userInput);
+		qPrompt = userInput;
+		
 	}
 	
 
+	//Helper Function
+	private boolean isDouble(String msg) {
+		
+		try {
+			Double.parseDouble(msg);
+			return true;
+		} catch (NumberFormatException nfe) {
+			return false;
+		}
+		
+		
+	}
+	
+	
 	public Answer getNewAnswer() {
 		
 		MCSAAnswer mc = new MCSAAnswer("", 0.0);
@@ -124,6 +148,7 @@ public class MCSAQuestion extends MCQuestion{
 		
 		savedWrite.println(points);
 		savedWrite.println(qPrompt);
+		savedWrite.println(ansArray.size());
 		
 		super.save(savedWrite);
 
