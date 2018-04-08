@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 public class Exam {
 
 	private ArrayList<Question> qArray = new ArrayList<Question>(20); // 20 Questions is max for now
+	private ArrayList<Question> qArraySkip = new ArrayList<Question>(20);
 	private String examName;
 	private String timeStamp;
 	private double examPoints = 0.0;
@@ -148,25 +149,97 @@ public class Exam {
 	}
 
 	// Gets the Answer from Student and loops
-	public void getAnswerFromStudent(int position) {
-
-		if (position == 0) {
+	public void getAnswerFromStudent(int position) 
+	{
+		if (position == 0) 
+		{
 			System.out.println("\nPlease Enter your Name: ");
 			Scanner scName = ScannerFactory.getKeyboardScanner();
 			studentName = scName.nextLine();
 		}
-
-		if (position >= 0) {
+		if (position >= 0) 
+		{
 			System.out.print("\n" + (position + 1) + ". ");
 			qArray.get(position).print();
-			System.out.println("\nSelect an Answer: ");
-			qArray.get(position).getAnswerFromStudent();
-
-			System.out.println("Value: " + qArray.get(position).getValue());
-
-		} else {
-
+			System.out.println("Would you like to skip this question?");
+			System.out.println("Enter 1 to skip and 0 to answer");
+			Scanner scanskip = ScannerFactory.getKeyboardScanner();
+			int skipresponse = scanskip.nextInt();
+			if(skipresponse == 1)
+			{
+				qArraySkip.add(qArray.get(position));
+				System.out.println("Question has been skipped");
+			}
+			else if(skipresponse == 0)
+			{
+				System.out.println("\nSelect an Answer: ");
+				qArray.get(position).getAnswerFromStudent();
+				
+				//System.out.println("Value: " + qArray.get(position).getValue());
+			}
+			else
+			{
+				System.out.println("ERROR: That is not a choice question has been skipped");
+			}
+		} 
+		else 
+		{
+			
 			System.out.println("Error: Test User attempted to put an invalid position.");
+		}
+		if((qArraySkip.size() > 0) && (position == qArray.size()-1))
+		{
+			System.out.println("");
+			System.out.println("NOTICE: These are the questions you have skipped");
+			System.out.println("You must answer, no more skipping");
+			for(int i = 0;qArraySkip.size()>i;i++)
+			{
+				qArraySkip.get(i).print();
+				System.out.println("\nSelect an Answer: ");
+				qArraySkip.get(i).getAnswerFromStudent();
+				//System.out.println("Value: " + qArraySkip.get(i).getValue());
+			}
+		}
+		if(position == qArray.size()-1)
+		{
+			System.out.println("Would you like to go back and change your answer?");
+			System.out.println("Enter 1 for Yes and 0 for No");
+			Scanner scanchange = ScannerFactory.getKeyboardScanner();
+			int changeanswer = scanchange.nextInt();
+			if(changeanswer == 0)
+			{
+				System.out.println("Grading exam please wait...");
+			}
+			else if(changeanswer == 1)
+			{
+				for(int j = 0;qArray.size()>j;j++)
+				{
+					qArray.get(j).print();
+					//System.out.println("You answered "); //doesn't work because of MCMA
+					//qArray.get(j).studentAnswer.print(); //doesn't work because of MCMA
+					System.out.println("Would you like to change your answer?");
+					System.out.println("Enter 1 for Yes and 0 for No");
+					Scanner scanchange2 = ScannerFactory.getKeyboardScanner();
+					int changeanswer2 = scanchange2.nextInt();
+					if(changeanswer2 == 0)
+					{
+						//continue;
+					}
+					else if(changeanswer2 == 1)
+					{
+						System.out.println("\nSelect an Answer: ");
+						qArray.get(j).getAnswerFromStudent();
+					}
+					else
+					{
+						System.out.println("ERROR: That is not an option, moving to next question");
+					}
+				}
+			}
+			else
+			{
+				System.out.println("ERROR: That is not an option, grading exam please wait...");
+			}
 		}
 	}
 
