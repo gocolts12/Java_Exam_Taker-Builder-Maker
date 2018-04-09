@@ -17,6 +17,7 @@ public class Exam {
 	private ArrayList<Question> qArraySkip = new ArrayList<Question>(20);
 	private String examName;
 	private String timeStamp;
+	private String versionNumber;
 	private double examPoints = 0.0;
 	
 	private boolean debugMode = false;
@@ -39,10 +40,14 @@ public class Exam {
 			String tiStamp = sc.nextLine();
 			timeStamp = tiStamp;
 			
+			String viStamp = sc.nextLine();
+			versionNumber = viStamp;
+			
 			//Debug Mode
 			if (debugMode == true) {
 				System.out.println("Exam.class TimeStamp: " + timeStamp);
 				System.out.println("Exam.class ExamName: " + examName);
+				System.out.println("Exam class versionNumber: " + versionNumber);
 			}
 			
 			// This Scans the ExamFile and looks ONLY for Questions and takes in the Prompt
@@ -406,6 +411,19 @@ public class Exam {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 		LocalDateTime now = LocalDateTime.now();
 		savedWrite.println(dtf.format(now));
+		
+		Random rand = new Random();
+		int n = rand.nextInt(9);
+		String randomNumber = "";
+		
+		for (int i = 0; i < n; i++) {
+			randomNumber += randomNumber + Integer.toString(n);
+			n = rand.nextInt(9);
+		}
+		System.out.println("Verison Number: " + randomNumber);
+		
+		//Version Control
+		savedWrite.println(randomNumber);
 
 		for (int i = 0; i < qArray.size(); i++) {
 
@@ -430,11 +448,10 @@ public class Exam {
 	public void saveStudentAnswers(PrintWriter savedWrite) {
 		savedWrite.println(studentName);
 		savedWrite.println(examName);
-
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 		LocalDateTime now = LocalDateTime.now();
-
 		savedWrite.println(dtf.format(now));
+		savedWrite.println(versionNumber);
 
 		for (int i = 0; i < qArray.size(); i++) {
 			// savedWrite.print("\n" + (i + 1) + ". "); //Prints out the number for the
@@ -452,12 +469,15 @@ public class Exam {
 		studentName = studentN;
 
 		String ExamN = sc.nextLine();
-
 		examName = ExamN;
+		
+		String versionN = sc.nextLine();
+		versionNumber = versionN;
 
 		System.out.println("StudentName: " + studentName);
 		System.out.println("Exam Name: " + examName);
-
+		System.out.println("VersionNumber: " + versionNumber);
+		
 		// Debug Size of qArray
 		// System.out.println("qArray Size: " + qArray.size());
 

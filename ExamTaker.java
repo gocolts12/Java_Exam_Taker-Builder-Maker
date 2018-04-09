@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 
 public class ExamTaker 
 {
+	
 	private static String myName = "Jonel Alcasid";
 	private static String myNetID = "jalcas2";
 
@@ -100,11 +101,11 @@ public class ExamTaker
     	//exam1.getAnswerFromStudent(-1);
 	
     	//User-Input Here
-    	/*//Original
-		for (int i = 0; i < questionSize; i++) {
-		exam1.getAnswerFromStudent(i);
-		}
-    	 */
+    	//Original
+	//	for (int i = 0; i < questionSize; i++) {
+	//	exam1.getAnswerFromStudent(i);
+	//	}
+    	 //
     	int i = 0;
     	while(i<questionSize)
     	{
@@ -162,5 +163,6 @@ public class ExamTaker
     		System.out.println("ERROR in Exam: " + ex);
     	}
 	}
+
 }
 
