@@ -342,7 +342,7 @@ public class Exam {
 			int changeanswer = scanchange.nextInt();
 			if(changeanswer == 0)
 			{
-				System.out.println("Grading exam please wait...");
+				//System.out.println("Grading exam please wait...");
 			}
 			else if(changeanswer == 1)
 			{
@@ -372,7 +372,7 @@ public class Exam {
 			}
 			else
 			{
-				System.out.println("ERROR: That is not an option, grading exam please wait...");
+				//System.out.println("ERROR: That is not an option, grading exam please wait...");
 			}
 		}
 	}

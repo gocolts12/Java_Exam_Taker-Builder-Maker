@@ -99,7 +99,6 @@ public abstract class MCQuestion extends Question {
 			//int letter = 'A' + i;	//Formula: (A + 0)..(A + i) 
 			//System.out.print("   " + Character.toString((char) letter) + ") ");	
 			
-			//savedWrite.print(ansArray.get(i).creditSelected + " ");
 			
 			savedWrite.print(ansArray.get(i).creditSelected + " ");
 			ansArray.get(i).save(savedWrite);

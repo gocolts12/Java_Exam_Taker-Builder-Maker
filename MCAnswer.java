@@ -51,7 +51,7 @@ public abstract class MCAnswer extends Answer {
 	public void save(PrintWriter savedWrite) {
 		
 		//savedWrite.print(creditSelected + " ");
-		savedWrite.println(multiText);
+		savedWrite.println(multiText.trim());
 		
 	}
 	

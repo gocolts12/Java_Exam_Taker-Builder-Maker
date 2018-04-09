@@ -18,8 +18,8 @@ public class MCSAAnswer extends MCAnswer {
 	
 	public MCSAAnswer(Scanner sc) {
 		super(sc);
-		multiText = "d";
-		creditSelected = 5.0;
+		//multiText = "d";
+		//creditSelected = 5.0;
 	}
 	
 	/*

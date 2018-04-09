@@ -154,7 +154,7 @@ public class MCMAQuestion extends MCQuestion{
 		//Save requires multiple inputs and then print
 		for (int i = 0; i < studentAnsArr.size(); i++) {
 			MCMAAnswer ans = (MCMAAnswer) studentAnsArr.get(i);
-			savedWrite.println(ans.multiText);
+			savedWrite.println(ans.multiText.trim());
 		}
 	}
 	
