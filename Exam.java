@@ -8,8 +8,12 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-import java.time.format.DateTimeFormatter;
-import java.time.LocalDateTime;
+//Java 8 Imports
+//import java.time.format.DateTimeFormatter;
+//import java.time.LocalDateTime;
+import java.util.*;
+import java.text.*;
+
 
 public class Exam {
 
@@ -407,10 +411,15 @@ public class Exam {
 		// Prints the Exam Name to the Test
 		savedWrite.println(examName);
 
-		// Exam TimeStamp
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-		LocalDateTime now = LocalDateTime.now();
-		savedWrite.println(dtf.format(now));
+		// Exam TimeStamp JAVA 8
+		//DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+		//LocalDateTime now = LocalDateTime.now();
+		//savedWrite.println(dtf.format(now));
+		
+		// Exam TimeStamp Java 7
+		Date currentDate = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		savedWrite.println(sdf.format(currentDate));
 		
 		Random rand = new Random();
 		int n = rand.nextInt(9);
@@ -448,9 +457,16 @@ public class Exam {
 	public void saveStudentAnswers(PrintWriter savedWrite) {
 		savedWrite.println(studentName);
 		savedWrite.println(examName);
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-		LocalDateTime now = LocalDateTime.now();
-		savedWrite.println(dtf.format(now));
+		
+		//DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+		//LocalDateTime now = LocalDateTime.now();
+		//savedWrite.println(dtf.format(now));
+		
+		// Exam TimeStamp Jave 7
+		Date currentDate = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/DD HH:mm:ss");
+		savedWrite.println(sdf.format(currentDate));
+		
 		savedWrite.println(versionNumber);
 
 		for (int i = 0; i < qArray.size(); i++) {

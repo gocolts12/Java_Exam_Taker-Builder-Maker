@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 
 public class ExamTaker 
 {
-	
+/*	
 	private static String myName = "Jonel Alcasid";
 	private static String myNetID = "jalcas2";
 
@@ -163,6 +163,6 @@ public class ExamTaker
     		System.out.println("ERROR in Exam: " + ex);
     	}
 	}
-
+*/
 }
 
