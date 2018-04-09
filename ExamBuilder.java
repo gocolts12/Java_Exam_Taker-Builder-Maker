@@ -1,4 +1,4 @@
-package HW_4_ExamBuilder;
+package HW_4;
 
 import java.util.Random;
 import java.io.File;
@@ -31,13 +31,8 @@ public class ExamBuilder {
 
 	// private static String directoryM =
 	// "/nfsdirs/home4/home4/ugrad4/bvilla/CS342/HW3/examfile.txt"; // CHANGE
-	// DIRECTROY
-	// HERE~!
-	// private static String directoryA =
-	// "/nfsdirs/home4/home4/ugrad4/bvilla/CS342/HW3/ansFile.txt"; // Change
-	// DIRECTORY
-	// HERE~!
-	private static String directoryM = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4_ExamBuilder/examfile.txt";
+
+	private static String directoryM = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4/examfile.txt";
 
 	private volatile static boolean debugMode = false; // Debug Mode
 
@@ -141,8 +136,8 @@ public class ExamBuilder {
 
 			String userInput = df.nextLine(); // Holds examFileName
 
-			directoryM = "C:\\Users\\DrNoodles\\eclipse-workspace\\CS342 HW_4\\src\\HW_4_ExamBuilder"; // CHANGE
-																										// Directory
+			//directoryM = "C:\\Users\\DrNoodles\\eclipse-workspace\\CS342 HW_4\\src\\HW_4"; // CHANGE
+			directoryM = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4";																							// Directory
 																										// HERE...
 			userInput = userInput + ".txt";
 
@@ -437,7 +432,7 @@ public class ExamBuilder {
 		}
 	}
 
-	// Remove Questions
+	// Remove Questions (DONE)
 	private static void questionRemove() {
 		if (check == true) {
 			System.out.println("    Which Question would you like to remove?");
@@ -503,7 +498,11 @@ public class ExamBuilder {
 
 			Scanner df = ScannerFactory.getKeyboardScanner();
 			String userInput = df.nextLine();
-
+			
+			String directoryFix = directoryM + userInput;
+			
+			directoryM = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4/newexamfile.txt";
+			
 			File fileNameExam = new File(directoryM);
 
 			try {

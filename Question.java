@@ -1,5 +1,5 @@
 
-package HW_4_ExamBuilder;
+package HW_4;
 
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -20,23 +20,50 @@ public abstract class Question {
 	//NEW Constructor
 	public Question(Scanner sc) {
 		
+		double mVal = 0.0;
+		
+		String userInput = sc.nextLine();
+		
+		System.out.println("Questoin input: " + userInput);
+		
+		if(isDouble(userInput)) {
+			mVal = Double.parseDouble(userInput);
+		}
+		
+		
 		//Takes in the Point Value
-		double mVal = sc.nextDouble();
+		//double mVal = sc.nextDouble();
+		
+		//System.out.println("Question Scanner Class: " + mVal);
 		
 		//Skip to Next Line
-		sc.nextLine();
+		//sc.nextLine();
 		
 		//Grabs the Question
 		String msgP = sc.nextLine();
 		
-		this.msgPrompt = msgP;
-		this.maxValue = mVal;
+		//System.out.println("Question Scanner MSGP: " + msgP);
+		
+		msgPrompt = msgP;
+		maxValue = mVal;
+		
+		//System.out.println("What is MaxValue atm : " + maxValue);
 		
 		/* Debugging		
 		System.out.println("Question String(V): " + v);
 		System.out.println("Value (mVal): " + mVal);
 		*/
 		
+	}
+	
+	//Helper function 
+	private boolean isDouble(String msg) {
+		try {
+			Double.parseDouble(msg);
+			return true;
+		} catch (NumberFormatException nfe) {
+			return false;
+		}		
 	}
 	
 	

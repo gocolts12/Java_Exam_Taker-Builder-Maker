@@ -1,5 +1,5 @@
 
-package HW_4_ExamBuilder;
+package HW_4;
 
 import java.util.Scanner;
 import java.io.PrintWriter;
@@ -22,15 +22,17 @@ public class MCSAQuestion extends MCQuestion{
 	//NEW Constructor
 	public MCSAQuestion (Scanner sc) {
 		super(sc);
-		String userInput = sc.toString();
+		/*String userInput = sc.nextLine();
 		
 		System.out.println("USER INPUT IN MCSA: " + userInput);
+		
 		if (isDouble(userInput)) {
 			points = Double.parseDouble(userInput);
 		}
 		userInput = sc.nextLine();
 		System.out.println("New USERINPUT in MCSA: " + userInput);
 		qPrompt = userInput;
+		*/
 		
 	}
 	

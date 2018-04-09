@@ -1,5 +1,5 @@
 
-package HW_4_ExamBuilder;
+package HW_4;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -50,10 +50,47 @@ public class Exam {
 			while (sc.hasNextLine()) {
 
 				String v = sc.nextLine();
+				//System.out.println("Exam Scanner String: " + v);
+				
 
 				if (v.equals("MCSAQuestion")) {
 					try {
-						MCSAQuestion newQuest = new MCSAQuestion(sc);
+						
+						//Do Next Scanner
+						//String userInput = sc.nextLine();
+						//System.out.println("MCSAQ: " + userInput);
+						double mVal = 0.0;
+						double ansLimit = 0.0;
+						
+						String userInput = sc.nextLine();
+						if (isDouble(userInput)) {
+							mVal = Double.parseDouble(userInput);
+						}
+						
+						String userInputMsg = sc.nextLine();
+						
+						MCSAQuestion newQuest = new MCSAQuestion(userInputMsg, mVal);
+						
+						String ansLimitM = sc.nextLine();
+						
+						if(isDouble(ansLimitM)) {
+							ansLimit = Double.parseDouble(ansLimitM);
+						}
+						
+						for (int i = 0; i < ansLimit; i++) {
+							
+							double ptsA = sc.nextDouble();
+							String qMsgPrompt = sc.nextLine();
+							
+							MCSAAnswer a1 = new MCSAAnswer(qMsgPrompt, ptsA);
+							
+							newQuest.addAnswer(a1);
+						}
+						
+						//MCSAQuestion newQuest = new MCSAQuestion(sc);
+						
+						
+						
 						qArray.add(newQuest);
 					} catch (Exception e) {
 						System.out.println("Error: Input is not a Number");
@@ -61,7 +98,43 @@ public class Exam {
 
 				} else if (v.equals("MCMAQuestion")) {
 					try {
-						MCMAQuestion newQuest = new MCMAQuestion(sc);
+						
+						double mVal = 0.0;
+						double ansLimit = 0.0;
+						double baseVal = 0.0;
+						
+						String userInput = sc.nextLine();
+						if (isDouble(userInput)) {
+							mVal = Double.parseDouble(userInput);
+						}
+						
+						String userInputMsg = sc.nextLine();
+						
+						//System.out.println("MCMAQ: " + userInputMsg);
+						
+						String userInputBase = sc.nextLine();
+						if(isDouble(userInputBase)) {
+							baseVal = Double.parseDouble(userInputBase);
+						}
+						
+						MCMAQuestion newQuest = new MCMAQuestion(userInputMsg, mVal, baseVal);
+						
+						String ansLimitM = sc.nextLine();
+						
+						if(isDouble(ansLimitM)) {
+							ansLimit = Double.parseDouble(ansLimitM);
+						}
+						
+						for (int i = 0; i < ansLimit; i++) {
+							
+							double ptsA = sc.nextDouble();
+							String qMsgPrompt = sc.nextLine();
+							
+							MCMAAnswer a1 = new MCMAAnswer(qMsgPrompt, ptsA);
+							
+							newQuest.addAnswer(a1);
+						}
+						
 						qArray.add(newQuest);
 
 					} catch (Exception e) {
@@ -70,7 +143,31 @@ public class Exam {
 
 				} else if (v.equals("NumQuestion")) {
 					try {
-						NumQuestion newQuest = new NumQuestion(sc);
+						
+						//String userInput = sc.nextLine();
+						//System.out.println("MCSAQ: " + userInput);
+						double mVal = 0.0;
+						double ansF = 0.0;
+						
+						String userInput = sc.nextLine();
+						if (isDouble(userInput)) {
+							mVal = Double.parseDouble(userInput);
+						}
+						
+						String userInputMsg = sc.nextLine();
+						
+						NumQuestion newQuest = new NumQuestion(userInputMsg, mVal);
+						
+						String answerRight = sc.nextLine();
+
+						if (isDouble(answerRight)) {
+							ansF = Double.parseDouble(answerRight);
+						}
+						NumAnswer a1 = new NumAnswer(ansF);
+						
+						newQuest.setRightAnswer(a1);
+						
+						//NumQuestion newQuest = new NumQuestion(sc);
 						qArray.add(newQuest);
 						
 					} catch (Exception e) {
@@ -79,12 +176,32 @@ public class Exam {
 
 				} else if (v.equals("SAQuestion")) {
 					try {
-						SAQuestion newQuest = new SAQuestion(sc);						
+						
+						//String userInput = sc.nextLine();
+						//System.out.println("MCSAQ: " + userInput);
+						double mVal = 0.0;
+						
+						String userInput = sc.nextLine();
+						if (isDouble(userInput)) {
+							mVal = Double.parseDouble(userInput);
+						}
+						
+						String userInputMsg = sc.nextLine();
+						
+						SAQuestion newQuest = new SAQuestion(userInputMsg, mVal);
+						
+						String answerRight = sc.nextLine();
+						SAAnswer a1 = new SAAnswer(answerRight);
+						newQuest.setRightAnswer(a1);
+						
+						//SAQuestion newQuest = new SAQuestion(sc);			
+						
 						qArray.add(newQuest);
 					} catch (Exception e) {
 						System.out.println("Error: Input is not a Number");
 					}
 				}
+				
 			}
 
 		} else {
@@ -92,8 +209,20 @@ public class Exam {
 			
 			System.out.println("Error: The File is Empty...");
 		}
-
+		
 	}
+	
+	//Helper Function isDouble : boolean
+	private boolean isDouble(String msg) {
+		try {
+			Double.parseDouble(msg);
+			return true;
+		} catch (NumberFormatException nfe) {
+			return false;
+		}
+	}
+	
+	
 
 	// Prints all the Questions & answers out
 	public void print() {

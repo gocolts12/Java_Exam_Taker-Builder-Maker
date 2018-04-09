@@ -1,5 +1,5 @@
 
-package HW_4_ExamBuilder;
+package HW_4;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -22,7 +22,11 @@ public class NumQuestion extends Question {
 	}
 	
 	public NumQuestion(Scanner sc) {
-		super(sc);		
+		super(sc);
+		/*
+		String userInput = sc.nextLine();
+		System.out.println("NumQuestion STUFF: " + userInput);
+		*/
 	}
 	
 	

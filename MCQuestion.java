@@ -1,5 +1,5 @@
 
-package HW_4_ExamBuilder;
+package HW_4;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -18,6 +18,10 @@ public abstract class MCQuestion extends Question {
 	
 	protected MCQuestion (Scanner sc) {
 		super(sc);
+		/*
+		String userInput = sc.nextLine();
+		System.out.println("MCQuestion Stuff: " + userInput);
+		*/
 	}
 	
 	
