@@ -27,7 +27,7 @@ public class ExamGrader
 		Scanner sc = ScannerFactory.getKeyboardScanner();
 		String userInput = sc.nextLine();
 		
-		String directoryM = "/home/forsene/Desktop/342/342proj4";
+		String directoryM = "C:\\Users\\Michael\\Google Drive\\School\\Junior\\Spring\\342\\342proj4";
 		
 		check = new File(directoryM, userInput + ".txt").exists();
 
@@ -55,59 +55,25 @@ public class ExamGrader
 					exam1 = new Exam(fd);
 	
 				} catch (FileNotFoundException e) {
+					System.out.println("Failure to scan exam");
 					e.printStackTrace();
 				}
 		           
-		         //Load Answer
-				  try { 
-				   Scanner fd = new Scanner(fileNameAnswer);
-				    
-				    int tracker = 0;
-				    if (sc.hasNextLine()) {
-				            String name = sc.nextLine();
-				            studentName = name;
-				     
-				            String examName = sc.nextLine();
-				            examName = examName;
-				         
-				            String timeStamp = sc.nextLine();
-				            timeStamp = timeStamp;
-				       
-				            String versionNumber = sc.nextLine();
-				            versionNumber = versionNumber;
+		         //Call restoreStudentAnswers to attach the answers to each exam question
+				Scanner an;
 				
-				    //Heart of Scanning the answer file
-				            while (sc.hasNextLine()) 
-				            {
-				            	String v = sc.nextLine();
-				                if (v.equals("MCSAAnswer")) 
-				                {
-				                	v = sc.nextLine();
-				                	//MCSAAnswer ans = new MCSAnswer(v, );
-				                	exam1.qArray.get(0)
-				                	
-				                } 
-				                else if (v.equals("MCMAAnswer"))
-				                {
-				                	
-				                } 
-				                else if (v. equals("SAAnswer")) 
-				                {
-				                	
-				                } 
-				                else if (v.equals("NumAnswer")) 
-				                {
-				                	
-				                }
-				
-				            }
-				
-				
+				try {
+					an = new Scanner(fileNameAnswer);
+					exam1.restoreStudentAnswers(an);
+					exam1.reportQuestionValues();
 				} catch (FileNotFoundException e) {
-				     e.printStackTrace();
-				     }
-				} //End of if statement
-				
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			else
+			{
+				System.out.println("Check failed");
 			}
 		}
 	}
@@ -122,7 +88,7 @@ public class ExamGrader
 			String userInput = df.nextLine(); // Holds examFileName
 
 			//directoryM = "C:\\Users\\DrNoodles\\eclipse-workspace\\CS342 HW_4\\src\\HW_4"; // CHANGE
-			String directoryM = "/home/forsene/Desktop/342/342proj4";																							// Directory
+			String directoryM = "C:\\Users\\Michael\\Google Drive\\School\\Junior\\Spring\\342\\342proj4";																							// Directory
 																										// HERE...
 			userInput = userInput + ".txt";
 
