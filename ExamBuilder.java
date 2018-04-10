@@ -20,7 +20,6 @@ import java.util.StringTokenizer;
 
 public class ExamBuilder {
 
-	
 	// Name
 	private static String myName = "Brian De Villa";
 	private static String myNetID = "bdevil2";
@@ -325,21 +324,38 @@ public class ExamBuilder {
 
 		if (check == true) {
 			System.out.println("    What Type of Question would you like to add?");
-			System.out.println("    Usage: MCSAQ_5.0_Which of these cars is the best?_");
+			// System.out.println(" Usage: MCSAQ_5.0_Which of these cars is the best?_");
+			System.out.println("    i.e) MCSAQ, MCMAQ, SAQ, NumQ");
 			System.out.print("    ");
 
 			Scanner df = ScannerFactory.getKeyboardScanner();
 			String userInput = df.nextLine();
 
-			String[] userInputRefined = userInput.split("_");
+			// String[] userInputRefined = userInput.split("_");
+			//
+			if (userInput.equals("MCSAQ")) {
 
-			if (userInputRefined[0].equals("MCSAQ")) {
+				System.out.print("    \nEnter the amount of points for the question: ");
+				df = ScannerFactory.getKeyboardScanner();
+				userInput = df.nextLine();
+				Double valP = 0.0;
 
-				String qMsgP = userInputRefined[2];
-				Double valP = Double.parseDouble(userInputRefined[1]);
+				if (isDouble(userInput)) {
+					valP = Double.parseDouble(userInput);
+				}
 
-				System.out.println("qMsg: " + qMsgP);
-				System.out.println("Valp: " + valP);
+				System.out.print("    \nEnter the question: ");
+				df = ScannerFactory.getKeyboardScanner();
+				userInput = df.nextLine();
+				String qMsgP = userInput;
+
+				// String qMsgP = userInputRefined[2];
+				// valP = Double.parseDouble(userInputRefined[1]);
+
+				if (debugMode == true) {
+					System.out.println("qMsg: " + qMsgP);
+					System.out.println("Valp: " + valP);
+				}
 
 				MCSAQuestion q = new MCSAQuestion(qMsgP, valP); // Could Replace with Scanner
 
@@ -347,13 +363,37 @@ public class ExamBuilder {
 				addAnswertoQuest(0, q);
 
 				exam1.addQuestion(q);
-				System.out.println("    Question has been successfully Added.");
+				System.out.println("    \nQuestion has been successfully Added.");
 
-			} else if (userInputRefined[0].equalsIgnoreCase("MCMAQ")) {
+			} else if (userInput.equalsIgnoreCase("MCMAQ")) {
+				
+				System.out.print("    \nEnter the amount of points for the question: ");
+				df = ScannerFactory.getKeyboardScanner();
+				userInput = df.nextLine();
+				Double valP = 0.0;
 
-				String qMsgP = userInputRefined[3];
-				Double valP = Double.parseDouble(userInputRefined[1]);
-				Double valBC = Double.parseDouble(userInputRefined[2]);
+				if (isDouble(userInput)) {
+					valP = Double.parseDouble(userInput);
+				}
+				
+				System.out.print("    \nEnter the amount for the base credit: ");
+				df = ScannerFactory.getKeyboardScanner();
+				userInput = df.nextLine();
+				Double valBC = 0.0;
+
+				if (isDouble(userInput)) {
+					valBC = Double.parseDouble(userInput);
+				}
+				
+				System.out.print("    \nEnter the question: ");
+				df = ScannerFactory.getKeyboardScanner();
+				userInput = df.nextLine();
+				String qMsgP = userInput;
+
+				//String qMsgP = userInputRefined[3];
+				//Double valP = Double.parseDouble(userInputRefined[1]);
+				//Double valBC = Double.parseDouble(userInputRefined[2]);
+				
 				MCMAQuestion q = new MCMAQuestion(qMsgP, valP, valBC);
 
 				addAnswertoQuest(1, q);
@@ -361,20 +401,50 @@ public class ExamBuilder {
 				exam1.addQuestion(q);
 				System.out.println("    Question has been successfully Added.");
 
-			} else if (userInputRefined[0].equalsIgnoreCase("SAQ")) {
+			} else if (userInput.equalsIgnoreCase("SAQ")) {
+				
+				System.out.print("    \nEnter the amount of points for the question: ");
+				df = ScannerFactory.getKeyboardScanner();
+				userInput = df.nextLine();
+				Double valP = 0.0;
 
-				String qMsgP = userInputRefined[2];
-				Double valP = Double.parseDouble(userInputRefined[1]);
+				if (isDouble(userInput)) {
+					valP = Double.parseDouble(userInput);
+				}
+
+				System.out.print("    \nEnter the question: ");
+				df = ScannerFactory.getKeyboardScanner();
+				userInput = df.nextLine();
+				String qMsgP = userInput;
+
+				//String qMsgP = userInputRefined[2];
+				//Double valP = Double.parseDouble(userInputRefined[1]);
+				
 				SAQuestion q = new SAQuestion(qMsgP, valP);
 
 				addAnswertoQuest(2, q);
 				exam1.addQuestion(q);
 				System.out.println("    Question has been successfully Added.");
 
-			} else if (userInputRefined[0].equalsIgnoreCase("NumQ")) {
+			} else if (userInput.equalsIgnoreCase("NumQ")) {
+				
+				System.out.print("    \nEnter the amount of points for the question: ");
+				df = ScannerFactory.getKeyboardScanner();
+				userInput = df.nextLine();
+				Double valP = 0.0;
 
-				String qMsgP = userInputRefined[2];
-				Double valP = Double.parseDouble(userInputRefined[1]);
+				if (isDouble(userInput)) {
+					valP = Double.parseDouble(userInput);
+				}
+
+				System.out.print("    \nEnter the question: ");
+				df = ScannerFactory.getKeyboardScanner();
+				userInput = df.nextLine();
+				String qMsgP = userInput;
+
+				//String qMsgP = userInputRefined[2];
+				//Double valP = Double.parseDouble(userInputRefined[1]);
+				
 				NumQuestion q = new NumQuestion(qMsgP, valP);
 				addAnswertoQuest(3, q);
 
@@ -388,12 +458,12 @@ public class ExamBuilder {
 			if (debugMode == true) {
 				// Raw User Input
 				System.out.println("    UserInputed: " + userInput);
-				System.out.println("    userInputRefinedLength: " + userInputRefined.length);
+				// System.out.println(" userInputRefinedLength: " + userInputRefined.length);
 
 				// Tokenized Input
-				for (int i = 0; i < userInputRefined.length; i++) {
-					System.out.println("    Array: " + userInputRefined[i]);
-				}
+				// for (int i = 0; i < userInputRefined.length; i++) {
+				// System.out.println(" Array: " + userInputRefined[i]);
+				// }
 			}
 
 		} else {
@@ -463,10 +533,17 @@ public class ExamBuilder {
 	// Save the Exam, to the file Method (DONE)
 	private static void saveExam() {
 		if (check == true) {
-			System.out.println("    Save the Exam's name: ");
+			System.out.print("    Saving the Exam");
 
-			Scanner df = ScannerFactory.getKeyboardScanner();
-			String userInput = df.nextLine();
+			try {
+				for (int i = 0; i < 3; i++) {
+					System.out.print(".");
+					Thread.sleep(1000);
+				}
+				System.out.println();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 
 			Random rand = new Random();
 			int n = rand.nextInt(9);
@@ -479,7 +556,7 @@ public class ExamBuilder {
 
 			exam1.setVersionNum(randomNumber);
 
-			String newExamFile = userInput + randomNumber + ".txt";
+			String newExamFile = "examFile" + randomNumber + ".txt";
 
 			File fileNameExam = new File(directoryM, newExamFile);
 
