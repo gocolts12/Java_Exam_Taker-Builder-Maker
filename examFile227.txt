@@ -1,0 +1,15 @@
+JohnBellsExamHw4
+2018/04/10 00:04:40
+227
+
+MCSAQuestion
+5.0
+Who ate the dang cookies?
+2
+5.0 Cookie Monster
+0.0 Elmo
+
+SAQuestion
+5.0
+What is the capital of Illinois?
+Springfield

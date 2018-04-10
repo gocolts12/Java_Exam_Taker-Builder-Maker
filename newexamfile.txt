@@ -1,9 +1,0 @@
-exam_01_test
-2018/04/09 22:39:53
-338
-
-MCSAQuestion
-5.0
-Which of these cars is the best?
-1
-5.0 Subaru WRX STI

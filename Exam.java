@@ -402,8 +402,9 @@ public class Exam {
 
 		// System.out.println("Verison Number: " + randomNumber);
 
-		System.out.println("Version Number: " + versionNumber);
-
+		if (debugMode == true) {
+			System.out.println("Version Number: " + versionNumber);
+		}
 		// Version Control
 		savedWrite.println(versionNumber);
 		// versionNumber = randomNumber;

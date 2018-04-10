@@ -9,14 +9,15 @@ import java.util.Random;
 import java.io.FileNotFoundException;
 
 public class ExamTaker {
-/*
+	
+	/*
 	private static String myName = "Jonel Alcasid";
 	private static String myNetID = "jalcas2";
 
 	private static String directoryM = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4/";
 	private static String directoryA = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4/";
 
-	private static int questionSize = 10; // Change HERE~!
+	private static int questionSize = 2; // Change HERE~!
 
 	private volatile static boolean debugMode = false; // Debug Mode
 	private static boolean check;
@@ -90,6 +91,8 @@ public class ExamTaker {
 		} catch (IOException ex) {
 			System.out.println("ERROR in Exam: " + ex);
 		}
+		
+		System.out.println("\nEnd of Program.\n");
 	}
 	*/
 }
