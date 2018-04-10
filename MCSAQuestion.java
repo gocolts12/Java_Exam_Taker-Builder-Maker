@@ -126,8 +126,13 @@ public class MCSAQuestion extends MCQuestion{
 			return maxValue;
 		}
 		*/
+		MCSAAnswer stuAns = new MCSAAnswer("",0.0);
 		
-		return super.getValue((MCSAAnswer) studentAnswer);
+		if (studentAnswer instanceof MCSAAnswer) {
+			stuAns = (MCSAAnswer) studentAnswer;
+		}
+		
+		return super.getValue(stuAns);
 
 	}
 

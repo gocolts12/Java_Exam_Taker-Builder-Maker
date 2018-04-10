@@ -189,8 +189,9 @@ public class MCMAQuestion extends MCQuestion{
 			
 		}
 		*/
-		
-		super.restoreStudentAnswers(sc);
+		for (int i = 0; i < studentAnsArr.size(); i++) {
+			super.restoreStudentAnswers(sc);
+		}
 		
 	}
 

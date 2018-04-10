@@ -228,6 +228,9 @@ public class Exam {
 
 	// Prints all the Questions & answers out
 	public void print() {
+		
+		//System.out.println("qArraySize: " + qArray.size());
+		
 		for (int i = 0; i < qArray.size(); i++) {
 			System.out.print("\n" + (i + 1) + ". "); // Prints out the number for the question (0 based)
 			qArray.get(i).print();
@@ -456,7 +459,6 @@ public class Exam {
 	public void restoreStudentAnswers(Scanner sc) {
 
 		String studentN = sc.nextLine();
-
 		studentName = studentN;
 
 		String ExamN = sc.nextLine();

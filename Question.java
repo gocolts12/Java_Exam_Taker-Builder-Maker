@@ -127,8 +127,10 @@ public abstract class Question {
 			///* 
 			if (parseLine.equals("SAAnswer")) {
 				String userStringM = tempScan.nextLine();	//Grabs the String 
-				SAAnswer ansN = new SAAnswer(tempScan);
+				//SAAnswer ansN = new SAAnswer(tempScan);
 			
+				SAAnswer ansN = new SAAnswer(userStringM);
+				
 				//Debug SAAnswer StudentAnswer
 				System.out.println("\nSAAnswer: " + userStringM);
 				
@@ -150,7 +152,8 @@ public abstract class Question {
 				try {
 					double ansV = tempScan.nextDouble();
 				
-					NumAnswer ansN = new NumAnswer(tempScan);
+					//NumAnswer ansN = new NumAnswer(tempScan);
+					NumAnswer ansN = new NumAnswer(ansV);
 					
 					studentAnswer = ansN;
 				

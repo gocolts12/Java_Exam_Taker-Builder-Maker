@@ -1,0 +1,79 @@
+examTest_Final
+2018/04/10 01:00:51
+1171173
+
+MCSAQuestion
+5.0
+Which of these cars is the best?
+4
+0.0 Lancer Evo III
+5.0 Subaru WRX STI
+0.0 Toyota AE86
+0.0 Toyota Prius
+
+SAQuestion
+5.0
+Type in the color for a common apple!
+red
+
+MCSAQuestion
+5.0
+Which of these games is considered a First-Person shooter game?
+5
+0.0 Dota 2
+0.0 World of Warcraft
+0.0 Don't Starve Together
+5.0 Tom Clancy's Rainbow Six: Siege
+0.0 Monster Hunter World
+
+SAQuestion
+5.0
+What is the capital of Wisconsin?
+madison
+
+MCSAQuestion
+5.0
+Who is the owner of the Krusty Krab?
+5
+5.0 Eugene H. Krabs
+0.0 Spongebob Squarepants
+0.0 Patrick Star
+0.0 Larry the Lobster
+0.0 Mrs.Puff
+
+SAQuestion
+5.0
+Who created Steam or Valve?
+Gabe Newell
+
+MCMAQuestion
+5.0
+Who went to Hogwarts? Circle all that apply: 
+0.4
+5
+0.2 Harry Potter
+0.2 Rubeus Hagrid
+-0.2 Princess Leia
+0.2 Tom Riddle
+-0.2 Bilbo Baggins
+
+MCMAQuestion
+5.0
+Who was from the Halo Series? Circle all that apply: 
+0.4
+5
+0.2 Spartan 117
+0.2 Cortana
+-0.2 Spiderman
+0.2 Sgt. Johnson
+-0.2 Naruto
+
+NumQuestion
+5.0
+What is 1 + 1?
+2.0
+
+NumQuestion
+5.0
+What is 5 x 5?
+25.0
