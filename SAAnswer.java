@@ -6,18 +6,18 @@ import java.io.PrintWriter;
 
 public class SAAnswer extends Answer{
 	
-	protected String wordAns;
+	protected String wordAns;  
 	
 	public SAAnswer(String aMsg) {
 		wordAns = aMsg;
 	}
 	
 	public SAAnswer(Scanner sc) {
+		
 		super(sc);
 		
 		String answerInput = sc.nextLine();
 		//SAAnswer a1 = new SAAnswer(answerRight);
-		
 		wordAns = answerInput;
 		
 		//String userInput = sc.nextLine();

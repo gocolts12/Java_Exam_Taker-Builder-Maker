@@ -19,10 +19,11 @@ public abstract class MCAnswer extends Answer {
 	//NEW CONSTRUCTOR
 	public MCAnswer (Scanner sc) {
 		super(sc);
-		multiText = sc.nextLine();
+		
 		
 		//System.out.println("multiText MCAnswer: " + multiText);
 		creditSelected = sc.nextDouble();
+		multiText = sc.nextLine();
 		//System.out.println("credit MCAnswer: " + creditSelected);
 	}
 	

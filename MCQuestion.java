@@ -17,12 +17,22 @@ public abstract class MCQuestion extends Question {
 	}
 	
 	protected MCQuestion (Scanner sc) {
-		super(sc);
+		super(sc);		
+		
 		/*
 		String userInput = sc.nextLine();
+		double ptScan = 0.0;
+		if (isDouble(userInput)) {
+			ptScan = Double.parseDouble(userInput);
+		}
+		
+		points = ptScan;
 		System.out.println("MCQuestion Stuff: " + userInput);
+		
 		*/
 	}
+	
+	
 	
 	
 	@Override	//Override the method and prints all the questions

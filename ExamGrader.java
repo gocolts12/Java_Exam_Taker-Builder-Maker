@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ExamGrader {
 	
-	
+	/*
 	private volatile static boolean debugMode = false;
 	private static boolean check;
 	private static Exam exam1;
@@ -56,6 +56,7 @@ public class ExamGrader {
 				try {
 					Scanner fd = new Scanner(fileNameExam);
 					exam1 = new Exam(fd);
+					fd.close();
 
 				} catch (FileNotFoundException e) {
 					System.out.println("Failure to scan exam");
@@ -125,5 +126,5 @@ public class ExamGrader {
 			System.out.println("    Error: An Exam has been already created or loaded.");
 		}
 	}
-
+*/
 }

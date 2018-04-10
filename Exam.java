@@ -63,7 +63,7 @@ public class Exam {
 				if (v.equals("MCSAQuestion")) {
 					try {
 						
-						//MCSAQ Scanner (Not Working)...
+						//MCSAQ Scanner 
 						//MCSAQuestion newQuest = new MCSAQuestion(sc);
 						
 						
@@ -163,7 +163,7 @@ public class Exam {
 						//NumQ Scanner (Not Working)...
 						//NumQuestion newQuest = new NumQuestion(sc);
 						
-						
+					
 						double mVal = 0.0;
 						double ansF = 0.0;
 
@@ -215,6 +215,7 @@ public class Exam {
 						String answerRight = sc.nextLine();
 						SAAnswer a1 = new SAAnswer(answerRight);
 						newQuest.setRightAnswer(a1);
+						
 
 						// SAQuestion newQuest = new SAQuestion(sc);
 						 
@@ -236,7 +237,7 @@ public class Exam {
 
 	
 	// Helper Function isDouble : boolean
-	private boolean isDouble(String msg) {
+	protected boolean isDouble(String msg) {
 		try {
 			Double.parseDouble(msg);
 			return true;

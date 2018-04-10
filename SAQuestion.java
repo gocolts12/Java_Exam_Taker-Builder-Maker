@@ -19,7 +19,7 @@ public class SAQuestion extends Question {
 	public SAQuestion(Scanner sc) {
 		super(sc);
 		
-		
+		/*
 		// String userInput = sc.nextLine();
 		// System.out.println("MCSAQ: " + userInput);
 		double mVal = 0.0;
@@ -34,27 +34,21 @@ public class SAQuestion extends Question {
 		//SAQuestion newQuest = new SAQuestion(userInputMsg, mVal);
 		qPrompt = userInputMsg;
 		points = mVal;
-		
+		*/
 		//String answerRight = sc.nextLine();
 		//SAAnswer a1 = new SAAnswer(answerRight);
 		
 		SAAnswer a1 = new SAAnswer(sc);
 		
-		this.setRightAnswer(a1);
+		//this.setRightAnswer(a1);
+		rightAnswer = a1;
 
 		// SAQuestion newQuest = new SAQuestion(sc);
 		 
 		
 	}
+
 	
-	private boolean isDouble(String msg) {
-		try {
-			Double.parseDouble(msg);
-			return true;
-		} catch (NumberFormatException nfe) {
-			return false;
-		}
-	}
 	
 	public Answer getNewAnswer() {
 		SAAnswer sa = new SAAnswer("");

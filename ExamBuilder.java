@@ -20,7 +20,7 @@ import java.util.StringTokenizer;
 
 public class ExamBuilder {
 	
-	/*
+	
 	// Name
 	private static String myName = "Brian De Villa";
 	private static String myNetID = "bdevil2";
@@ -574,6 +574,8 @@ public class ExamBuilder {
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
+			
+			System.out.println("    Success~! Test Version: " + randomNumber);
 
 		} else {
 			System.out.println("    Error: Cannot save Exam if Exam was not loaded.");
@@ -586,5 +588,5 @@ public class ExamBuilder {
 				+ "For more information about the commands type '?'\n");
 		commandLoop();
 	}
- */
+ 
 }

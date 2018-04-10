@@ -23,6 +23,7 @@ public class NumQuestion extends Question {
 	public NumQuestion(Scanner sc) {
 		super(sc);
 		
+		/*
 		double mVal = 0.0;
 		//double ansF = 0.0;
 
@@ -36,7 +37,7 @@ public class NumQuestion extends Question {
 		//NumQuestion newQuest = new NumQuestion(userInputMsg, mVal);
 		numQ = userInputMsg;
 		valu = mVal;
-		
+		*/
 		//System.out.println("NumQ msg: " + numQ);
 		//System.out.println("NumQ val: " + valu);
 
@@ -51,19 +52,11 @@ public class NumQuestion extends Question {
 		//NumAnswer a1 = new NumAnswer(ansF);
 		NumAnswer a1 = new NumAnswer(sc);
 
-		this.setRightAnswer(a1);
+		//this.setRightAnswer(a1);
+		rightAnswer = a1;
 		
 	}
 	
-	private boolean isDouble(String msg) {
-		try {
-			Double.parseDouble(msg);
-			return true;
-		} catch (NumberFormatException nfe) {
-			return false;
-		}
-	}
-
 	public Answer getNewAnswer() {
 		NumAnswer mc = new NumAnswer(0.0);
 		return mc;

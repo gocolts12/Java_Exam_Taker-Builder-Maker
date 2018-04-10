@@ -24,6 +24,7 @@ public class MCSAQuestion extends MCQuestion{
 		super(sc);
 		String userInput = sc.nextLine();								//Pts Value
 		
+		/*
 		//System.out.println("USER INPUT IN MCSA: " + userInput);
 		
 		if (isDouble(userInput)) {
@@ -34,12 +35,14 @@ public class MCSAQuestion extends MCQuestion{
 		//System.out.println("New USERINPUT in MCSA: " + userInput);
 		
 		qPrompt = userInput;
+		*/
 		
-		userInput = sc.nextLine();		//How many Answer
+		//userInput = sc.nextLine();		//How many Answer
+		
 		double ansLimit = 0.0;
 		
-		if (isDouble(userInput)) {
-			ansLimit = Double.parseDouble(userInput);
+		if (isInteger(userInput)) {
+			ansLimit = Integer.parseInt(userInput);
 		}
 
 		for (int i = 0; i < ansLimit; i++) {
@@ -56,24 +59,9 @@ public class MCSAQuestion extends MCQuestion{
 		
 		
 	}
+		
 	
-
-	//Helper Function
-	private boolean isDouble(String msg) {
-		
-		try {
-			Double.parseDouble(msg);
-			return true;
-		} catch (NumberFormatException nfe) {
-			return false;
-		}
-		
-		
-	}
-	
-	
-	public Answer getNewAnswer() {
-		
+	public Answer getNewAnswer() {	
 		MCSAAnswer mc = new MCSAAnswer("", 0.0);
 			
 		return mc; 
