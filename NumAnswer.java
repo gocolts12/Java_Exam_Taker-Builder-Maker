@@ -11,6 +11,7 @@ public class NumAnswer extends Answer {
 	//Default Constructor 
 	public NumAnswer(double num) {
 		val = num;
+		//System.out.println("NumAnswer.java: " + val);
 	}
 	
 	public NumAnswer(Scanner sc) {

@@ -150,10 +150,15 @@ public abstract class Question {
 			} else if (parseLine.equals("NumAnswer")) {
 			
 				try {
-					double ansV = tempScan.nextDouble();
+					
+					Double numQIn = tempScan.nextDouble();
+					//System.out.println("numA in Question.java: " + numQIn);
+					//double ansV = tempScan.nextDouble();
 				
+					double ansV = 0.0;
+					
 					//NumAnswer ansN = new NumAnswer(tempScan);
-					NumAnswer ansN = new NumAnswer(ansV);
+					NumAnswer ansN = new NumAnswer(numQIn);
 					
 					studentAnswer = ansN;
 				
@@ -180,6 +185,9 @@ public abstract class Question {
 					System.out.println("\nMCMAAnswer: ");
 					for (int i = 0; i < rAnsCount; i++) {
 						String userStringM = tempScan.nextLine();
+						
+						MCMAAnswer ansN = new MCMAAnswer(userStringM, 0.2);
+						studentAnswer = ansN;
 						System.out.println(userStringM);
 					}
 
