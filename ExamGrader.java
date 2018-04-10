@@ -18,8 +18,13 @@ public class ExamGrader
 	}
 	public static void main(String[] args)
 	{
-		
 		System.out.println("Welcome to Exam Grader.");
+		System.out.println("Enter the name of your answer file, and the cooresponding ");
+		System.out.println("exam file will attempt to be loaded");
+		
+		Scanner ch = ScannerFactory.getKeyboardScanner();
+		String choice = ch.nextLine();
+		
 		System.out.println("Please enter the name of your answer file.");
 		
 		//scan in the file name for the answer, extract the version number, and search for 
@@ -73,52 +78,8 @@ public class ExamGrader
 			}
 			else
 			{
-				System.out.println("Check failed");
+				System.out.println("Corresponding exam could not be found");
 			}
-		}
-	}
-
-  // Load Exam Method 
-	private static void loadExam() {
-
-		if (check == false) {
-			System.out.print("    Enter the Exam File Name: ");
-			Scanner df = ScannerFactory.getKeyboardScanner();
-
-			String userInput = df.nextLine(); // Holds examFileName
-
-			//directoryM = "C:\\Users\\DrNoodles\\eclipse-workspace\\CS342 HW_4\\src\\HW_4"; // CHANGE
-			String directoryM = "C:\\Users\\Michael\\Google Drive\\School\\Junior\\Spring\\342\\342proj4";																							// Directory
-																										// HERE...
-			userInput = userInput + ".txt";
-
-			// boolean check = new File(directoryM, userInput).exists();
-
-			check = new File(directoryM, userInput).exists();
-
-			if (check == true) {
-				System.out.println("    File has been successfully Loaded.");
-				File fileNameExam = new File(directoryM, userInput);
-				try {
-					Scanner fd = new Scanner(fileNameExam);
-					exam1 = new Exam(fd);
-
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				}
-			} else {
-				System.out.println("    Error: No File Exist with that name");
-			}
-
-			if (debugMode == true) {
-				System.out.println("    User Inputted: " + userInput);
-				System.out.println("    Check is: " + check);
-				String current = System.getProperty("user.dir");
-				System.out.println("    Current Working Dir in Java: " + current);
-			}
-		} else {
-
-			System.out.println("    Error: An Exam has been already created or loaded.");
 		}
 	}
 }
