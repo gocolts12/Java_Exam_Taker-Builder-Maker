@@ -22,10 +22,46 @@ public class NumQuestion extends Question {
 
 	public NumQuestion(Scanner sc) {
 		super(sc);
+		
+		double mVal = 0.0;
+		//double ansF = 0.0;
+
+		String userInput = sc.nextLine();
+		if (isDouble(userInput)) {
+			mVal = Double.parseDouble(userInput);
+		}
+
+		String userInputMsg = sc.nextLine();
+
+		//NumQuestion newQuest = new NumQuestion(userInputMsg, mVal);
+		numQ = userInputMsg;
+		valu = mVal;
+		
+		//System.out.println("NumQ msg: " + numQ);
+		//System.out.println("NumQ val: " + valu);
+
 		/*
-		 * String userInput = sc.nextLine(); System.out.println("NumQuestion STUFF: " +
-		 * userInput);
-		 */
+		String answerRight = sc.nextLine();
+
+		if (isDouble(answerRight)) {
+			ansF = Double.parseDouble(answerRight);
+		}
+		*/
+		
+		//NumAnswer a1 = new NumAnswer(ansF);
+		NumAnswer a1 = new NumAnswer(sc);
+
+		this.setRightAnswer(a1);
+		
+	}
+	
+	private boolean isDouble(String msg) {
+		try {
+			Double.parseDouble(msg);
+			return true;
+		} catch (NumberFormatException nfe) {
+			return false;
+		}
 	}
 
 	public Answer getNewAnswer() {

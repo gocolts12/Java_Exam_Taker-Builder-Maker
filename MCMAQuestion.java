@@ -31,8 +31,61 @@ public class MCMAQuestion extends MCQuestion{
 	//New Constructor
 	public MCMAQuestion(Scanner sc) {
 		super(sc);
-		//Add Stuff to the constructor here..
+		
+		double mVal = 0.0;
+		double ansLimit = 0.0;
+		double baseVal = 0.0;
+
+		String userInput = sc.nextLine();
+		if (isDouble(userInput)) {
+			mVal = Double.parseDouble(userInput);
+		}
+
+		String userInputMsg = sc.nextLine();
+
+		// System.out.println("MCMAQ: " + userInputMsg);
+
+		String userInputBase = sc.nextLine();
+		if (isDouble(userInputBase)) {
+			baseVal = Double.parseDouble(userInputBase);
+		}
+
+		//MCMAQuestion newQuest = new MCMAQuestion(userInputMsg, mVal, baseVal);
+		qqMsg = userInputMsg;
+		points = mVal;
+		baseCreditM = baseVal;
+		
+		//System.out.println("MCMAQ qqMsg: " + qqMsg);
+		//System.out.println("MCMAQ points: " + points);
+		//System.out.println("MCMAQ baseCred: " + baseCreditM);
+
+		String ansLimitM = sc.nextLine();
+
+		if (isDouble(ansLimitM)) {
+			ansLimit = Double.parseDouble(ansLimitM);
+		}
+
+		for (int i = 0; i < ansLimit; i++) {
+
+			//double ptsA = sc.nextDouble();
+			//String qMsgPrompt = sc.nextLine();
+
+			//MCMAAnswer a1 = new MCMAAnswer(qMsgPrompt, ptsA);
+			MCMAAnswer a1 = new MCMAAnswer(sc);
+
+			this.addAnswer(a1);
+		}
 	}
+	
+	private boolean isDouble(String msg) {
+		try {
+			Double.parseDouble(msg);
+			return true;
+		} catch (NumberFormatException nfe) {
+			return false;
+		}
+	}
+	
 	
 	public Answer getNewAnswer() {
 		MCMAAnswer mc = new MCMAAnswer("",0.0);

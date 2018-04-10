@@ -20,7 +20,10 @@ public abstract class MCAnswer extends Answer {
 	public MCAnswer (Scanner sc) {
 		super(sc);
 		multiText = sc.nextLine();
+		
+		//System.out.println("multiText MCAnswer: " + multiText);
 		creditSelected = sc.nextDouble();
+		//System.out.println("credit MCAnswer: " + creditSelected);
 	}
 	
 	

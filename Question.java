@@ -17,14 +17,15 @@ public abstract class Question {
 		this.maxValue = maxVal;	
 	}
 	
-	//NEW Constructor
+	//NEW Constructor						(Probably Leave this Constructor Blank)
 	public Question(Scanner sc) {
 		
+		/*
 		double mVal = 0.0;
 		
 		String userInput = sc.nextLine();
 		
-		System.out.println("Questoin input: " + userInput);
+		//System.out.println("Questoin input: " + userInput);
 		
 		if(isDouble(userInput)) {
 			mVal = Double.parseDouble(userInput);
@@ -49,7 +50,7 @@ public abstract class Question {
 		
 		//System.out.println("What is MaxValue atm : " + maxValue);
 		
-		/* Debugging		
+		// Debugging		
 		System.out.println("Question String(V): " + v);
 		System.out.println("Value (mVal): " + mVal);
 		*/
@@ -126,26 +127,30 @@ public abstract class Question {
 
 			///* 
 			if (parseLine.equals("SAAnswer")) {
-				String userStringM = tempScan.nextLine();	//Grabs the String 
+				//String userStringM = tempScan.nextLine();	//Grabs the String 
 				//SAAnswer ansN = new SAAnswer(tempScan);
 			
-				SAAnswer ansN = new SAAnswer(userStringM);
+				//SAAnswer ansN = new SAAnswer(userStringM + "aelraljrkae");					//Code Breaking
+				SAAnswer ansN = new SAAnswer(tempScan);
 				
 				//Debug SAAnswer StudentAnswer
-				System.out.println("\nSAAnswer: " + userStringM);
+				//System.out.println("\nSAAnswer: " + userStringM);
 				
 				//Sets Answer
 				studentAnswer = ansN;
 				
 			} else if (parseLine.equals("MCSAAnswer")) {
-				String userStringM = tempScan.nextLine();	//Grabs the string
-				MCSAAnswer ansN = new MCSAAnswer(userStringM, 1.0);
+				//String userStringM = tempScan.nextLine();	//Grabs the string
+				
+				
+				//MCSAAnswer ansN = new MCSAAnswer(userStringM + "alerharjalkejr", 1.0);		//Code Breaking
+				MCSAAnswer ansN = new MCSAAnswer(tempScan);
 				
 				//Sets Answer
 				studentAnswer = ansN;
 		
 				//Debug MCSAAnswer StudentAnswer
-				System.out.println("\nMCSAAnswer: " + userStringM);
+				//System.out.println("\nMCSAAnswer: " + userStringM);
 
 			} else if (parseLine.equals("NumAnswer")) {
 			
@@ -158,7 +163,7 @@ public abstract class Question {
 					double ansV = 0.0;
 					
 					//NumAnswer ansN = new NumAnswer(tempScan);
-					NumAnswer ansN = new NumAnswer(numQIn);
+					NumAnswer ansN = new NumAnswer(numQIn + 100);			//Code Breaking
 					
 					studentAnswer = ansN;
 				
@@ -186,7 +191,7 @@ public abstract class Question {
 					for (int i = 0; i < rAnsCount; i++) {
 						String userStringM = tempScan.nextLine();
 						
-						MCMAAnswer ansN = new MCMAAnswer(userStringM, 0.2);
+						MCMAAnswer ansN = new MCMAAnswer(userStringM + "jhjkfjfad", 0.2);		//Code Breaking
 						studentAnswer = ansN;
 						System.out.println(userStringM);
 					}

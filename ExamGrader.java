@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class ExamGrader {
 	
+	
 	private volatile static boolean debugMode = false;
 	private static boolean check;
 	private static Exam exam1;
@@ -29,7 +30,8 @@ public class ExamGrader {
 
 		//String directoryM = "C:\\Users\\Michael\\Google Drive\\School\\Junior\\Spring\\342\\342proj4";
 		
-		String directoryM = "C:\\Users\\DrNoodles\\eclipse-workspace\\CS342 HW_4\\src\\HW_4";
+		//String directoryM = "C:\\Users\\DrNoodles\\eclipse-workspace\\CS342 HW_4\\src\\HW_4";
+		String directoryM = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4";
 
 		check = new File(directoryM, userInput + ".txt").exists();
 
@@ -66,7 +68,7 @@ public class ExamGrader {
 				try {
 					an = new Scanner(fileNameAnswer);
 					exam1.restoreStudentAnswers(an);
-					//exam1.print();
+					exam1.print();
 					exam1.reportQuestionValues();
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -76,6 +78,7 @@ public class ExamGrader {
 				System.out.println("Check failed");
 			}
 		}
+		System.out.println("\nEnd of Program.\n");
 	}
 
 	// Load Exam Method

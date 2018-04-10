@@ -19,6 +19,11 @@ public class MCMAAnswer extends MCAnswer{
 	
 	public MCMAAnswer(Scanner sc) {
 		super(sc);
+		
+		//Already does this by passing it into MCAnswer
+		
+		//double ptsA = sc.nextDouble();
+		//String qMsgPrompt = sc.nextLine();
 	}
 	
 	/*

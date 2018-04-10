@@ -22,17 +22,38 @@ public class MCSAQuestion extends MCQuestion{
 	//NEW Constructor
 	public MCSAQuestion (Scanner sc) {
 		super(sc);
-		/*String userInput = sc.nextLine();
+		String userInput = sc.nextLine();								//Pts Value
 		
-		System.out.println("USER INPUT IN MCSA: " + userInput);
+		//System.out.println("USER INPUT IN MCSA: " + userInput);
 		
 		if (isDouble(userInput)) {
 			points = Double.parseDouble(userInput);
 		}
-		userInput = sc.nextLine();
-		System.out.println("New USERINPUT in MCSA: " + userInput);
+		userInput = sc.nextLine();										//Question Prompt
+		
+		//System.out.println("New USERINPUT in MCSA: " + userInput);
+		
 		qPrompt = userInput;
-		*/
+		
+		userInput = sc.nextLine();		//How many Answer
+		double ansLimit = 0.0;
+		
+		if (isDouble(userInput)) {
+			ansLimit = Double.parseDouble(userInput);
+		}
+
+		for (int i = 0; i < ansLimit; i++) {
+
+			//double ptsA = sc.nextDouble();
+			//String qMsgPrompt = sc.nextLine();
+
+			//MCSAAnswer a1 = new MCSAAnswer(qMsgPrompt, ptsA);
+			
+			MCSAAnswer a1 = new MCSAAnswer(sc);
+
+			this.addAnswer(a1);
+		}
+		
 		
 	}
 	

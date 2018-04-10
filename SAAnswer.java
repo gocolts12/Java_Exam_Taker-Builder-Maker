@@ -14,6 +14,14 @@ public class SAAnswer extends Answer{
 	
 	public SAAnswer(Scanner sc) {
 		super(sc);
+		
+		String answerInput = sc.nextLine();
+		//SAAnswer a1 = new SAAnswer(answerRight);
+		
+		wordAns = answerInput;
+		
+		//String userInput = sc.nextLine();
+		//System.out.println("SAAnswer.java: " + userInput);
 	}
 
 	

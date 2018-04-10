@@ -62,7 +62,11 @@ public class Exam {
 
 				if (v.equals("MCSAQuestion")) {
 					try {
-
+						
+						//MCSAQ Scanner (Not Working)...
+						//MCSAQuestion newQuest = new MCSAQuestion(sc);
+						
+						
 						// Do Next Scanner
 						// String userInput = sc.nextLine();
 						// System.out.println("MCSAQ: " + userInput);
@@ -94,16 +98,20 @@ public class Exam {
 							newQuest.addAnswer(a1);
 						}
 
-						// MCSAQuestion newQuest = new MCSAQuestion(sc);
-
+						
+						
 						qArray.add(newQuest);
 					} catch (Exception e) {
-						System.out.println("Error: Input is not a Number");
+						System.out.println("Error: MCSAQ Input is incorrect " + e);
 					}
 
 				} else if (v.equals("MCMAQuestion")) {
 					try {
 
+						//MCMAQ Scanner (Not Working)...
+						//MCMAQuestion newQuest = new MCMAQuestion(sc);
+						
+						
 						double mVal = 0.0;
 						double ansLimit = 0.0;
 						double baseVal = 0.0;
@@ -140,17 +148,22 @@ public class Exam {
 							newQuest.addAnswer(a1);
 						}
 
+						
+						
+						
 						qArray.add(newQuest);
 
 					} catch (Exception e) {
-						System.out.println("Error: Input is not a Number");
+						System.out.println("Error: MCMAQ Input is incorrect " + e);
 					}
 
 				} else if (v.equals("NumQuestion")) {
 					try {
 
-						// String userInput = sc.nextLine();
-						// System.out.println("MCSAQ: " + userInput);
+						//NumQ Scanner (Not Working)...
+						//NumQuestion newQuest = new NumQuestion(sc);
+						
+						
 						double mVal = 0.0;
 						double ansF = 0.0;
 
@@ -171,17 +184,21 @@ public class Exam {
 						NumAnswer a1 = new NumAnswer(ansF);
 
 						newQuest.setRightAnswer(a1);
-
-						// NumQuestion newQuest = new NumQuestion(sc);
+						
+					
 						qArray.add(newQuest);
 
 					} catch (Exception e) {
-						System.out.println("Error: Input is not a Number");
+						System.out.println("Error: NumQ Input is incorrect " + e);
 					}
 
 				} else if (v.equals("SAQuestion")) {
 					try {
 
+						//SAQ Scanner (Not Working)...
+						//SAQuestion newQuest = new SAQuestion(sc);
+						
+						
 						// String userInput = sc.nextLine();
 						// System.out.println("MCSAQ: " + userInput);
 						double mVal = 0.0;
@@ -200,10 +217,11 @@ public class Exam {
 						newQuest.setRightAnswer(a1);
 
 						// SAQuestion newQuest = new SAQuestion(sc);
+						 
 
 						qArray.add(newQuest);
 					} catch (Exception e) {
-						System.out.println("Error: Input is not a Number");
+						System.out.println("Error: SAQ Input is incorrect " + e);
 					}
 				}
 
@@ -216,6 +234,7 @@ public class Exam {
 
 	}
 
+	
 	// Helper Function isDouble : boolean
 	private boolean isDouble(String msg) {
 		try {
@@ -225,6 +244,7 @@ public class Exam {
 			return false;
 		}
 	}
+	
 
 	// Prints all the Questions & answers out
 	public void print() {

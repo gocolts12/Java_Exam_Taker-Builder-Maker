@@ -11,13 +11,31 @@ public class NumAnswer extends Answer {
 	//Default Constructor 
 	public NumAnswer(double num) {
 		val = num;
-		//System.out.println("NumAnswer.java: " + val);
+		//System.out.println("NumAnswer: " + val);
 	}
 	
 	public NumAnswer(Scanner sc) {
 		super(sc);
+		
+		double ansF = 0.0;
+		String answerInput = sc.nextLine();
+
+		if (isDouble(answerInput)) {
+			ansF = Double.parseDouble(answerInput);
+		}
+		
+		val = ansF;
+		//System.out.println("NumA val: " + val);
 	}
 	
+	private boolean isDouble(String msg) {
+		try {
+			Double.parseDouble(msg);
+			return true;
+		} catch (NumberFormatException nfe) {
+			return false;
+		}
+	}
 	
 	@Override
 	public void print() {

@@ -327,7 +327,7 @@ public class ExamBuilder {
 			System.out.println("    What Type of Question would you like to add?");
 			// System.out.println(" Usage: MCSAQ_5.0_Which of these cars is the best?_");
 			System.out.println("    i.e) MCSAQ, MCMAQ, SAQ, NumQ");
-			System.out.print("    ");
+			System.out.print("=>  ");
 
 			Scanner df = ScannerFactory.getKeyboardScanner();
 			String userInput = df.nextLine();
@@ -586,5 +586,5 @@ public class ExamBuilder {
 				+ "For more information about the commands type '?'\n");
 		commandLoop();
 	}
-*/	
+ */
 }

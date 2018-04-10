@@ -18,8 +18,14 @@ public class MCSAAnswer extends MCAnswer {
 	
 	public MCSAAnswer(Scanner sc) {
 		super(sc);
-		//multiText = "d";
-		//creditSelected = 5.0;
+		
+		//This is done in MCAnswer
+		//double ptsA = sc.nextDouble();
+		//String qMsgPrompt = sc.nextLine();
+		
+		//multiText = qMsgPrompt;
+		//creditSelected = ptsA;
+		
 	}
 	
 	/*
