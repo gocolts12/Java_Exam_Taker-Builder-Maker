@@ -1,37 +1,37 @@
 package HW_4;
 
+import java.util.Calendar;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+//import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
 
 public class ExamGrader {
 	
-	/*
-	private volatile static boolean debugMode = false;
 	private static boolean check;
 	private static Exam exam1;
 	private static String studentName, versionNumber, timeStamp, examName;
+	private static ArrayList<Question> arr = new ArrayList<Question>(20);
 
 	public ExamGrader() {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		System.out.println("Welcome to Exam Grader.");
 		System.out.println("Please enter the name of your answer file.");
 
 		// scan in the file name for the answer, extract the version number, and search
-		// for
-		// the corresponding exam file by appending the version number to the the exam
+		// for the corresponding exam file by appending the version number to the the exam
 		// file name
 		Scanner sc = ScannerFactory.getKeyboardScanner();
 		String userInput = sc.nextLine();
 
 		//String directoryM = "C:\\Users\\Michael\\Google Drive\\School\\Junior\\Spring\\342\\342proj4";
 		
-		//String directoryM = "C:\\Users\\DrNoodles\\eclipse-workspace\\CS342 HW_4\\src\\HW_4";
-		String directoryM = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4";
+		String directoryM = "C:\\Users\\Michael\\Google Drive\\School\\Junior\\Spring\\342\\342proj4";
 
 		check = new File(directoryM, userInput + ".txt").exists();
 
@@ -56,20 +56,95 @@ public class ExamGrader {
 				try {
 					Scanner fd = new Scanner(fileNameExam);
 					exam1 = new Exam(fd);
-					fd.close();
 
 				} catch (FileNotFoundException e) {
 					System.out.println("Failure to scan exam");
 					e.printStackTrace();
 				}
+				
+				//Verify that the answer file was created after the exam file
+				
+//				//Grab the timestamp from the exam file
+				String [] timeStampArrayExam = timeStamp.split("/");
+				int [] examDateArrayInt = null;
+				
+				//year
+				examDateArrayInt[0] = Integer.parseInt(timeStampArrayExam[0]);
+				//month
+				examDateArrayInt[1] = Integer.parseInt(timeStampArrayExam[1]);
+				
+				String [] timeStampArrayExam2 = timeStampArrayExam[2].split(" ");
+				
+				//day of the month
+				examDateArrayInt[2] = Integer.parseInt(timeStampArrayExam2[0]);
 
+				String [] timeStampArrayExam3 = timeStampArrayExam2[1].split(":");
+				
+				examDateArrayInt[3] = Integer.parseInt(timeStampArrayExam2[0]);
+				examDateArrayInt[4] = Integer.parseInt(timeStampArrayExam2[1]);
+				examDateArrayInt[5] = Integer.parseInt(timeStampArrayExam2[2]);
+				
+//				Date examDate = new Date(examDateArrayInt[0], examDateArrayInt[1], examDateArrayInt[2], examDateArrayInt[3], 
+//						examDateArrayInt[4], examDateArrayInt[5]);		
+				Calendar examDate = Calendar.getInstance();
+				examDate.set(Calendar.YEAR, examDateArrayInt[0]);
+				examDate.set(Calendar.MONTH, examDateArrayInt[1]);
+				examDate.set(Calendar.DAY_OF_MONTH, examDateArrayInt[2]);
+				examDate.set(Calendar.HOUR_OF_DAY, examDateArrayInt[3]);
+				examDate.set(Calendar.MINUTE, examDateArrayInt[4]);
+				examDate.set(Calendar.SECOND, examDateArrayInt[5]);
+				
+//				
+//				//Grab the timestamp from the answer file			
+				
+				Scanner ansScanner = new Scanner(userInput + ".txt");
+				ansScanner.nextLine();
+				ansScanner.nextLine();
+				String ansTimeStamp = ansScanner.nextLine();
+				
+				String [] timeStampArrayAnswer = ansTimeStamp.split("/");
+				int [] answerDateArrayInt = null;
+				
+				//year
+				answerDateArrayInt[0] = Integer.parseInt(timeStampArrayExam[0]);
+				//month
+				answerDateArrayInt[1] = Integer.parseInt(timeStampArrayExam[1]);
+				
+				String [] timeStampArrayAnswer2 = timeStampArrayAnswer[2].split(" ");
+				
+				//day of the month
+				answerDateArrayInt[2] = Integer.parseInt(timeStampArrayExam2[0]);
+
+				String [] timeStampArrayAnswer3 = timeStampArrayAnswer2[1].split(":");
+				
+				answerDateArrayInt[3] = Integer.parseInt(timeStampArrayAnswer2[0]);
+				answerDateArrayInt[4] = Integer.parseInt(timeStampArrayAnswer2[1]);
+				answerDateArrayInt[5] = Integer.parseInt(timeStampArrayAnswer2[2]);
+				
+//				Date examDate = new Date(examDateArrayInt[0], examDateArrayInt[1], examDateArrayInt[2], examDateArrayInt[3], 
+//						examDateArrayInt[4], examDateArrayInt[5]);		
+				Calendar answerDate = Calendar.getInstance();
+				examDate.set(Calendar.YEAR, answerDateArrayInt[0]);
+				examDate.set(Calendar.MONTH, answerDateArrayInt[1]);
+				examDate.set(Calendar.DAY_OF_MONTH, answerDateArrayInt[2]);
+				examDate.set(Calendar.HOUR_OF_DAY, answerDateArrayInt[3]);
+				examDate.set(Calendar.MINUTE, answerDateArrayInt[4]);
+				examDate.set(Calendar.SECOND, answerDateArrayInt[5]);
+				
+				//Check that the answer file did not occur before the making of the exam
+				if(answerDate.compareTo(examDate) < 0)
+				{
+					System.out.println("Invalid timestamp, answer file predates exam file");
+					System.exit(0);
+				}
+				
 				// Call restoreStudentAnswers to attach the answers to each exam question
 				Scanner an;
-
+				
 				try {
 					an = new Scanner(fileNameAnswer);
 					exam1.restoreStudentAnswers(an);
-					exam1.print();
+					//exam1.print();
 					exam1.reportQuestionValues();
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -79,52 +154,7 @@ public class ExamGrader {
 				System.out.println("Check failed");
 			}
 		}
-		System.out.println("\nEnd of Program.\n");
+		
 	}
 
-	// Load Exam Method
-	private static void loadExam() {
-
-		if (check == false) {
-			System.out.print("    Enter the Exam File Name: ");
-			Scanner df = ScannerFactory.getKeyboardScanner();
-
-			String userInput = df.nextLine(); // Holds examFileName
-
-			// directoryM = "C:\\Users\\DrNoodles\\eclipse-workspace\\CS342
-			// HW_4\\src\\HW_4"; // CHANGE
-			String directoryM = "C:\\Users\\Michael\\Google Drive\\School\\Junior\\Spring\\342\\342proj4"; // Directory
-			// HERE...
-			userInput = userInput + ".txt";
-
-			// boolean check = new File(directoryM, userInput).exists();
-
-			check = new File(directoryM, userInput).exists();
-
-			if (check == true) {
-				System.out.println("    File has been successfully Loaded.");
-				File fileNameExam = new File(directoryM, userInput);
-				try {
-					Scanner fd = new Scanner(fileNameExam);
-					exam1 = new Exam(fd);
-
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				}
-			} else {
-				System.out.println("    Error: No File Exist with that name");
-			}
-
-			if (debugMode == true) {
-				System.out.println("    User Inputted: " + userInput);
-				System.out.println("    Check is: " + check);
-				String current = System.getProperty("user.dir");
-				System.out.println("    Current Working Dir in Java: " + current);
-			}
-		} else {
-
-			System.out.println("    Error: An Exam has been already created or loaded.");
-		}
-	}
-*/
 }
