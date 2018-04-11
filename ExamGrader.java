@@ -128,8 +128,8 @@ public class ExamGrader {
 				answerDate.set(Calendar.MONTH, answerDateArrayInt[1]);
 				answerDate.set(Calendar.DAY_OF_MONTH, answerDateArrayInt[2]);
 				answerDate.set(Calendar.HOUR_OF_DAY, answerDateArrayInt[3]);
-				examDate.set(Calendar.MINUTE, answerDateArrayInt[4]);
-				examDate.set(Calendar.SECOND, answerDateArrayInt[5]);
+				answerDate.set(Calendar.MINUTE, answerDateArrayInt[4]);
+				answerDate.set(Calendar.SECOND, answerDateArrayInt[5]);
 				
 				
 				
