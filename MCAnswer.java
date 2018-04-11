@@ -22,8 +22,9 @@ public abstract class MCAnswer extends Answer {
 		
 		
 		//System.out.println("multiText MCAnswer: " + multiText);
-		creditSelected = sc.nextDouble();
 		multiText = sc.nextLine();
+		creditSelected = sc.nextDouble();
+		//multiText = sc.nextLine();
 		//System.out.println("credit MCAnswer: " + creditSelected);
 	}
 	

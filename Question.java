@@ -141,9 +141,9 @@ public abstract class Question {
 			if (parseLine.equals("SAAnswer")) {
 
 				//String userStringM = tempScan.nextLine(); // Grabs the String
-				//SAAnswer ansN = new SAAnswer(userStringM); // Code Testing
+				SAAnswer ansN = new SAAnswer("TEST_SAA"); // Code Testing
 
-				SAAnswer ansN = new SAAnswer(tempScan);
+				//SAAnswer ansN = new SAAnswer(tempScan);
 
 				// Debug SAAnswer StudentAnswer
 				// System.out.println("\nSAAnswer: " + userStringM);
@@ -153,8 +153,9 @@ public abstract class Question {
 
 			} else if (parseLine.equals("MCSAAnswer")) {
 				//String userStringM = tempScan.nextLine(); // Grabs the string
-				//MCSAAnswer ansN = new MCSAAnswer(userStringM, 1.0); // Code Testing
-				 MCSAAnswer ansN = new MCSAAnswer(tempScan);
+				 MCSAAnswer ansN = new MCSAAnswer("TEST_MCSA", 1.0); // Code Testing
+				
+				 //MCSAAnswer ansN = new MCSAAnswer(tempScan);
 
 				// Sets Answer
 				studentAnswer = ansN;
@@ -171,8 +172,8 @@ public abstract class Question {
 
 					// double ansV = 0.0;
 
-					NumAnswer ansN = new NumAnswer(tempScan);
-					//NumAnswer ansN = new NumAnswer(numQIn); // Code Breaking
+					//NumAnswer ansN = new NumAnswer(tempScan);
+					NumAnswer ansN = new NumAnswer(-999); // Code Breaking
 
 					studentAnswer = ansN;
 
@@ -198,8 +199,8 @@ public abstract class Question {
 					//for (int i = 0; i < rAnsCount; i++) {
 					//	String userStringM = tempScan.nextLine();
 
-						//MCMAAnswer ansN = new MCMAAnswer(userStringM, 0.2); // Code Testing
-						MCMAAnswer ansN = new MCMAAnswer(tempScan);
+						MCMAAnswer ansN = new MCMAAnswer("TEST MCMA", 0.2); // Code Testing
+						//MCMAAnswer ansN = new MCMAAnswer(tempScan);
 						studentAnswer = ansN;
 						// System.out.println(userStringM);
 					//}

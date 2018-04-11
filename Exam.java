@@ -527,5 +527,9 @@ public class Exam {
 	public String getVersionNum() {
 		return versionNumber;
 	}
+	
+	public String getTimeStamp() {
+		return timeStamp;
+	}
 
 }

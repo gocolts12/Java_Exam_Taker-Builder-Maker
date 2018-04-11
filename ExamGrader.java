@@ -31,8 +31,8 @@ public class ExamGrader {
 
 		//String directoryM = "C:\\Users\\Michael\\Google Drive\\School\\Junior\\Spring\\342\\342proj4";
 		
-		String directoryM = "C:\\Users\\Michael\\Google Drive\\School\\Junior\\Spring\\342\\342proj4";
-
+		//String directoryM = "C:\\Users\\Michael\\Google Drive\\School\\Junior\\Spring\\342\\342proj4";
+		String directoryM = "C:\\Users\\DrNoodles\\eclipse-workspace\\CS342 HW_4\\src\\HW_4";
 		check = new File(directoryM, userInput + ".txt").exists();
 
 		if (check == true) {
@@ -65,8 +65,9 @@ public class ExamGrader {
 				//Verify that the answer file was created after the exam file
 				
 //				//Grab the timestamp from the exam file
+				timeStamp = exam1.getTimeStamp();
 				String [] timeStampArrayExam = timeStamp.split("/");
-				int [] examDateArrayInt = null;
+				int [] examDateArrayInt = new int[6];
 				
 				//year
 				examDateArrayInt[0] = Integer.parseInt(timeStampArrayExam[0]);
@@ -80,9 +81,9 @@ public class ExamGrader {
 
 				String [] timeStampArrayExam3 = timeStampArrayExam2[1].split(":");
 				
-				examDateArrayInt[3] = Integer.parseInt(timeStampArrayExam2[0]);
-				examDateArrayInt[4] = Integer.parseInt(timeStampArrayExam2[1]);
-				examDateArrayInt[5] = Integer.parseInt(timeStampArrayExam2[2]);
+				examDateArrayInt[3] = Integer.parseInt(timeStampArrayExam3[0]);
+				examDateArrayInt[4] = Integer.parseInt(timeStampArrayExam3[1]);
+				examDateArrayInt[5] = Integer.parseInt(timeStampArrayExam3[2]);
 				
 //				Date examDate = new Date(examDateArrayInt[0], examDateArrayInt[1], examDateArrayInt[2], examDateArrayInt[3], 
 //						examDateArrayInt[4], examDateArrayInt[5]);		
@@ -96,14 +97,13 @@ public class ExamGrader {
 				
 //				
 //				//Grab the timestamp from the answer file			
-				
-				Scanner ansScanner = new Scanner(userInput + ".txt");
+				Scanner ansScanner = new Scanner(fileNameAnswer);
 				ansScanner.nextLine();
 				ansScanner.nextLine();
 				String ansTimeStamp = ansScanner.nextLine();
 				
 				String [] timeStampArrayAnswer = ansTimeStamp.split("/");
-				int [] answerDateArrayInt = null;
+				int [] answerDateArrayInt = new int[6];
 				
 				//year
 				answerDateArrayInt[0] = Integer.parseInt(timeStampArrayExam[0]);
@@ -117,26 +117,31 @@ public class ExamGrader {
 
 				String [] timeStampArrayAnswer3 = timeStampArrayAnswer2[1].split(":");
 				
-				answerDateArrayInt[3] = Integer.parseInt(timeStampArrayAnswer2[0]);
-				answerDateArrayInt[4] = Integer.parseInt(timeStampArrayAnswer2[1]);
-				answerDateArrayInt[5] = Integer.parseInt(timeStampArrayAnswer2[2]);
+				answerDateArrayInt[3] = Integer.parseInt(timeStampArrayAnswer3[0]);
+				answerDateArrayInt[4] = Integer.parseInt(timeStampArrayAnswer3[1]);
+				answerDateArrayInt[5] = Integer.parseInt(timeStampArrayAnswer3[2]);
 				
 //				Date examDate = new Date(examDateArrayInt[0], examDateArrayInt[1], examDateArrayInt[2], examDateArrayInt[3], 
 //						examDateArrayInt[4], examDateArrayInt[5]);		
 				Calendar answerDate = Calendar.getInstance();
-				examDate.set(Calendar.YEAR, answerDateArrayInt[0]);
-				examDate.set(Calendar.MONTH, answerDateArrayInt[1]);
-				examDate.set(Calendar.DAY_OF_MONTH, answerDateArrayInt[2]);
-				examDate.set(Calendar.HOUR_OF_DAY, answerDateArrayInt[3]);
+				answerDate.set(Calendar.YEAR, answerDateArrayInt[0]);
+				answerDate.set(Calendar.MONTH, answerDateArrayInt[1]);
+				answerDate.set(Calendar.DAY_OF_MONTH, answerDateArrayInt[2]);
+				answerDate.set(Calendar.HOUR_OF_DAY, answerDateArrayInt[3]);
 				examDate.set(Calendar.MINUTE, answerDateArrayInt[4]);
 				examDate.set(Calendar.SECOND, answerDateArrayInt[5]);
 				
+				
+				
+				
+				
 				//Check that the answer file did not occur before the making of the exam
-				if(answerDate.compareTo(examDate) < 0)
+				if((answerDate.compareTo(examDate) < 0))
 				{
 					System.out.println("Invalid timestamp, answer file predates exam file");
 					System.exit(0);
 				}
+				
 				
 				// Call restoreStudentAnswers to attach the answers to each exam question
 				Scanner an;
