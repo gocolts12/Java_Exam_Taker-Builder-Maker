@@ -1,4 +1,3 @@
-package HW_4;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,12 +9,13 @@ import java.io.FileNotFoundException;
 
 public class ExamTaker {
 
-	/*
 	private static String myName = "Jonel Alcasid";
 	private static String myNetID = "jalcas2";
 
-	private static String directoryM = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4/";
-	private static String directoryA = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4/";
+	//private static String directoryM = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4/";
+	//private static String directoryA = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4/";
+	private static String directoryM = "/nfsdirs/home4/home4/ugrad4/bvilla/CS342/HW4_New";
+	private static String directoryA = "/nfsdirs/home4/home4/ugrad4/bvilla/CS342/HW4_New";
 
 	private static int questionSize = 10; // Change HERE~!
 
@@ -94,5 +94,4 @@ public class ExamTaker {
 		
 		System.out.println("\nEnd of Program.\n");
 	}
-	*/
 }

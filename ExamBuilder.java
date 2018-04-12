@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
 
 public class ExamBuilder {
 	
-	/*
+	
 	// Name
 	private static String myName = "Brian De Villa";
 	private static String myNetID = "bdevil2";
@@ -27,7 +27,8 @@ public class ExamBuilder {
 	// private static String directoryM =
 	// "/nfsdirs/home4/home4/ugrad4/bvilla/CS342/HW3/examfile.txt"; // CHANGE
 
-	private static String directoryM = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4/";
+	//private static String directoryM = "/Users/DrNoodles/eclipse-workspace/CS342 HW_4/src/HW_4/";
+	private static String directoryM = "/nfsdirs/home4/home4/ugrad4/bvilla/CS342/HW4_New";
 
 	private volatile static boolean debugMode = false; // Debug Mode
 
@@ -587,5 +588,4 @@ public class ExamBuilder {
 				+ "For more information about the commands type '?'\n");
 		commandLoop();
 	}
- */
 }

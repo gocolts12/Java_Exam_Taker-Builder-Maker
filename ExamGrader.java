@@ -31,7 +31,8 @@ public class ExamGrader {
 		//String directoryM = "C:\\Users\\Michael\\Google Drive\\School\\Junior\\Spring\\342\\342proj4";
 		
 		//String directoryM = "C:\\Users\\Michael\\Google Drive\\School\\Junior\\Spring\\342\\342proj4";
-		String directoryM = "C:\\Users\\DrNoodles\\eclipse-workspace\\CS342 HW_4\\src\\HW_4";
+		//String directoryM = "C:\\Users\\DrNoodles\\eclipse-workspace\\CS342 HW_4\\src\\HW_4";
+		String directoryM = "/nfsdirs/home4/home4/ugrad4/bvilla/CS342/HW4_New";
 		check = new File(directoryM, userInput + ".txt").exists();
 
 		if (check == true) {

@@ -52,9 +52,9 @@ CLASSES3 = \
 
 default: classes
 
-examTaker: classes2
+ExamTaker: classes2
 
-examGrader: classes3
+ExamGrader: classes3
 
 classes: $(CLASSES:.java=.class)
 
