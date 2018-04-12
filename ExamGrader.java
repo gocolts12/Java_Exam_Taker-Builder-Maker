@@ -158,6 +158,7 @@ public class ExamGrader {
 			} else {
 				System.out.println("Check failed");
 			}
+			exam1.printToCSV();
 		}
 		
 	}

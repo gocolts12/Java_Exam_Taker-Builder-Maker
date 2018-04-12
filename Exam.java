@@ -531,5 +531,19 @@ public class Exam {
 	public String getTimeStamp() {
 		return timeStamp;
 	}
+public void printToCSV() throws FileNotFoundException
+{
+	File resultsFile = new File("C:\\Users\\Michael\\Google Drive\\School\\Junior\\Spring\\342\\342proj4", "results.csv");
+	PrintWriter pw = new PrintWriter(resultsFile);
+	
+	String HEADER = "number,earned,possible"; 
+	pw.println(HEADER);
+	for (int i = 0; i < qArray.size(); i++)
+	{
+		
+		pw.println(((i+1) + "," + qArray.get(i).getValue() + "," + qArray.get(i).maxValue).toString());
+	}
+	pw.close();
+}
 
 }
