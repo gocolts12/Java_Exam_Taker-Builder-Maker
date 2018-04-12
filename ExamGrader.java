@@ -1,4 +1,3 @@
-package HW_4;
 
 import java.util.Calendar;
 import java.io.File;

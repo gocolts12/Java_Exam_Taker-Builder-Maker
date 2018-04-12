@@ -1,8 +1,4 @@
 
-package HW_4;
-
-//Done
-
 import java.util.ArrayList;
 import java.util.Scanner;
 

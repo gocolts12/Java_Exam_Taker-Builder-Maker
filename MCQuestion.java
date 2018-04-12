@@ -1,6 +1,4 @@
 
-package HW_4;
-
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Random;

@@ -1,6 +1,4 @@
 
-package HW_4;
-
 import java.util.Scanner;
 
 //Done
