@@ -1,8 +1,3 @@
-#Makefile for Java HW#1
-#author: Brian De Villa
-#net-id: bdevil2
-#Class: CS342
-
 .SUFFIXES: .java .class
 
 .java.class:
