@@ -68,7 +68,8 @@ How To Run the Program:
 	Type in "java ExamGrader" without the quotes and the program will run.
 	
 BEFORE RUNNING PROGRAM:
-	Please Change the directory for examfile.txt & ansFile.txt in ExamGrader
+	YOU MUST change the directory for examfile.txt & ansFile.txt in ExamGrader, as well as the directory in the "printToCSV" method in Exam.java
+	in order to save each file to the correct locations.
 
 Description:
 	This app loads an answer file, locates the corresponding exam file, and proceeds to list the grades for the exam. This app is designed to ONLY take in an answer file, and because of the naming convention of the files, as long as an answer file was created, a corresponding exam file should exist. 
