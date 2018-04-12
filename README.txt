@@ -41,7 +41,7 @@ Net-id: jalcas2
 UIN:671528474
 
 How To Make the Program:
-	Simply type "make examTaker" and you should be able to see it compile the 15 java files.
+	Simply type "make ExamTaker" and you should be able to see it compile the 15 java files.
 
 How To Run the Program:
 	Type in "java ExamTaker" without the quotes and the program will run.
