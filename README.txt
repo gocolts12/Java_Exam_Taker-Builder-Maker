@@ -75,5 +75,3 @@ Description:
 	For example, once ExamBuilder creates an exam, it will be named “examFilexxxx.txt” where the number of x’s can vary between 1-9. This is the version number. When an exam is taken, the corresponding version number is appended to the answer file, naming it “ansFilexxxx.txt,” similar to the exam file. 
 	This design choice of only taking in the answer file will alleviate all issues of version differences as well as date discrepancies, although a date discrepancy checker was implemented just in case.
 
-I was unable to implement writing to csv :(
-
